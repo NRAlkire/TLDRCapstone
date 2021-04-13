@@ -31,8 +31,8 @@ namespace TLDR_Capstone
 			conn.Close();
 
 
-			Label1.Text = value + " " + Login.Password.ToString() + " " + (value.Trim() == Login.Password.Trim());
-			if (Object.Equals(value.Trim(), Login.Password.Trim()))
+			Label1.Text = value + " " + Login.Password.ToString() + " " + (value.Trim() == Login.Password);
+			if (value.Trim().Equals(Login.Password))
 			{
 				e.Authenticated = true;
 				Response.Redirect("~/About");
