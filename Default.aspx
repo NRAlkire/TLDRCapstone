@@ -2,13 +2,18 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
+	<div class="jumbotron">
         <h1>Schedule Planner</h1>
 		
         <div style="text-align: center;">
             <div style="width: 213px; margin-left: auto; margin-right:auto;">
-                <asp:Login ID="Login1" runat="server" />
+                <asp:Login ID="Login" runat="server" OnAuthenticate="Login_Authenticate" />
             </div>
+        </div>
+        <div>
+
+        	<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+
         </div>
     </div>
 </asp:Content>
