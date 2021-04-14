@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Web.Security;
-using System.Data;
 
 namespace TLDR_Capstone
 {
@@ -30,8 +26,6 @@ namespace TLDR_Capstone
 			string value = (string)command.ExecuteScalar();
 			conn.Close();
 
-
-			Label1.Text = value + " " + Login.Password.ToString() + " " + (value.Trim() == Login.Password);
 			if (value.Trim().Equals(Login.Password))
 			{
 				e.Authenticated = true;
@@ -39,6 +33,11 @@ namespace TLDR_Capstone
 
 			}
 
+		}
+
+		protected void gotoRegBtn_Click(object sender, EventArgs e)
+		{
+			Response.Redirect("~/Register");
 		}
 	}
 }
