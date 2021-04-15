@@ -8,9 +8,8 @@ namespace TLDR_Capstone.Classes
 	public class Course
 	{
         //Constructor
-        public Course(String pDeptID, String pName, int pCourseID, String pInstructor, List<Section> pSections)
+        public Course(String pName, String pCourseID, String pInstructor, List<Section> pSections)
         {
-            deptID = pDeptID;
             name = pName;
             courseID = pCourseID;
             instructor = pInstructor;
@@ -18,8 +17,7 @@ namespace TLDR_Capstone.Classes
         }
 
         //Members
-        public String deptID, name, instructor;
-        public int courseID;
+        public String name, courseID, instructor;
         public List<Section> sections;
 
         //Add a section to the course sections
@@ -28,24 +26,7 @@ namespace TLDR_Capstone.Classes
             sections.Add(pSection);
         }
 
-        public void removeSection(Section pSection)
-        {
-            sections.Remove(pSection);
-            return;
-        }
-
         //Getters and Setters
-        public String getDeptID()
-        {
-            return deptID;
-        }
-
-        public void setDeptID(String pDeptID)
-        {
-            deptID = pDeptID;
-            return;
-        }
-
         public String getName()
         {
             return name;
@@ -56,12 +37,12 @@ namespace TLDR_Capstone.Classes
             this.name = name;
         }
 
-        public int getCourseID()
+        public String getCourseID()
         {
             return courseID;
         }
 
-        public void setCourseID(int courseID)
+        public void setCourseID(String courseID)
         {
             this.courseID = courseID;
         }

@@ -8,9 +8,8 @@ namespace TLDR_Capstone.Classes
 	public class Section
 	{
         //Constructor
-        public Section(String pDeptID, int pCourseID, int pSection, int pBeginTime, int pEndTime, List<Boolean> pMeetDays)
+        public Section(String pCourseID, String pSection, int pBeginTime, int pEndTime, List<Boolean> pMeetDays)
         {
-            deptID = pDeptID;
             courseID = pCourseID;
             section = pSection;
             beginTime = pBeginTime;
@@ -19,38 +18,27 @@ namespace TLDR_Capstone.Classes
         }
 
         //Members
-        public String deptID;
-        public int courseID, section, beginTime, endTime;
+        public String courseID, section;
+        public int beginTime, endTime;
         public List<Boolean> meetDays;
 
         //Getters and Setters
-        public String getDeptID()
-        {
-            return deptID;
-        }
-
-        public void setDeptID(String pDeptID)
-        {
-            deptID = pDeptID;
-            return;
-        }
-
-        public int getCourseNum()
+        public String getCourseNum()
         {
             return courseID;
         }
 
-        public void setCourseNum(int courseNum)
+        public void setCourseNum(String courseNum)
         {
             this.courseID = courseNum;
         }
 
-        public int getSection()
+        public String getSection()
         {
             return section;
         }
 
-        public void setSection(int section)
+        public void setSection(String section)
         {
             this.section = section;
         }
