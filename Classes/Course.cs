@@ -83,5 +83,20 @@ namespace TLDR_Capstone.Classes
         {
             this.sections = sections;
         }
+
+        public void insertCourses(String con)
+        {
+            string query = "INSERT INTO Courses(DeptID,CourseID,Name,Instructor) VALUES(@DeptID,@CourseID,@Name,@Instructor)";
+
+            SQLCommand cmd = new SQLCommand(query, con);
+
+
+            cmd.Paramenters.AddWithValue("@DeptID", getDeptID());
+            cmd.Paramenters.AddWithValue("@CourseID", getCourseID());
+            cmd.Paramenters.AddWithValue("@Name", getName());
+            cmd.Paramenters.AddWithValue("@Instructor", getInstructor());
+
+            cmd.ExecuteNonQuery();
+        }
     }
 }

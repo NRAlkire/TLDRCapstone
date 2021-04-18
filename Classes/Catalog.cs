@@ -123,20 +123,14 @@ namespace TLDR_Capstone.Classes
 
             setCourses(courses);
 
+            string connection;
+
+            con.Open();
+            courses.ForEach(insertCourses(connection));
+            courses.ForEach(getSections().ForEach(insertSections(con)));
+            con.Close();
+
             return;
         }
-
-        /*
-         * public void insertCourses()
-        {
-            getCourses().ForEach(coursesTableAdapter.Insert(
-                getDeptID(),
-                getCourseID(),
-                getName(),
-                getInstructor(),
-                getSections()
-                );
-        }
-        */
     }
 }
