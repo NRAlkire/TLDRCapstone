@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -84,19 +85,20 @@ namespace TLDR_Capstone.Classes
             this.sections = sections;
         }
 
-        public void insertCourses(String con)
+        public void insertCourses()
         {
-            string query = "INSERT INTO Courses(DeptID,CourseID,Name,Instructor) VALUES(@DeptID,@CourseID,@Name,@Instructor)";
+            SqlConnection con = new SqlConnection();
+            string query = "INSERT INTO Courses(DeptID,CourseID,Name) VALUES(@DeptID,@CourseID,@Name)";
 
-            SQLCommand cmd = new SQLCommand(query, con);
+            SqlCommand cmd = new SqlCommand(query, con);
+            
+            cmd.Parameters.AddWithValue("@DeptID", getDeptID());
+            cmd.Parameters.AddWithValue("@CourseID", getCourseID());
+            cmd.Parameters.AddWithValue("@Name", getName());
 
-
-            cmd.Paramenters.AddWithValue("@DeptID", getDeptID());
-            cmd.Paramenters.AddWithValue("@CourseID", getCourseID());
-            cmd.Paramenters.AddWithValue("@Name", getName());
-            cmd.Paramenters.AddWithValue("@Instructor", getInstructor());
-
+            con.Open();
             cmd.ExecuteNonQuery();
+            con.Close();
         }
     }
 }

@@ -116,20 +116,24 @@ namespace TLDR_Capstone.Classes
                     }
 
                     //add the section to the course
-                    courses[courses.Count - 1].addSection(new Section(temp[0], Int32.Parse(temp[1]), temp[3], beginTime, endTime, MeetDays));
+                    courses[courses.Count - 1].addSection(new Section(temp[0], Int32.Parse(temp[1]), temp[2], temp[3], beginTime, endTime, MeetDays));
 
                 }
             }
 
             setCourses(courses);
 
-            string connection;
+            
 
-            con.Open();
-            courses.ForEach(insertCourses(connection));
-            courses.ForEach(getSections().ForEach(insertSections(con)));
-            con.Close();
-
+            foreach (Course c in courses)
+            {
+                c.insertCourses();
+                foreach (Section s in c.getSections())
+                {
+                    s.insertSections();
+                }
+            }
+            
             return;
         }
     }

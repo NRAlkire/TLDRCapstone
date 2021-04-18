@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -94,22 +95,19 @@ namespace TLDR_Capstone.Classes
             this.endTime = endTime;
         }
 
-        public void insertCourses(String con)
+        public void insertSections()
         {
-            string query = "INSERT INTO Sections(DeptID,CourseID,Instructor,Section,BeginTime,EndTime,MeetDays) VALUES(@DeptID,@CourseID,@Instructor,@Section,@BeginTime,@EndTime,@MeetDays)";
+            SqlConnection con = new SqlConnection();
+            string query = "INSERT INTO Sections(Instructor,Section) VALUES(@Instructor,@Section)";
 
-            SQLCommand cmd = new SQLCommand(query, con);
+            SqlCommand cmd = new SqlCommand(query, con);
 
+            cmd.Parameters.AddWithValue("@Instructor", getInstructor());
+            cmd.Parameters.AddWithValue("@Section", getSection());
 
-            cmd.Paramenters.AddWithValue("@DeptID", getDeptID());
-            cmd.Paramenters.AddWithValue("@CourseID", getCourseNum());
-            cmd.Paramenters.AddWithValue("@Instructor", getInstructor());
-            cmd.Paramenters.AddWithValue("@Section", getSection());
-            cmd.Paramenters.AddWithValue("@BeginTime", getBeginTime());
-            cmd.Paramenters.AddWithValue("@EndTime", getEndTime());
-            cmd.Paramenters.AddWithValue("@MeetDays", getMeetDays());
-
+            con.Open();
             cmd.ExecuteNonQuery();
+            con.Close();
         }
     }
 }
