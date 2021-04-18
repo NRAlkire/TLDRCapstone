@@ -8,8 +8,9 @@ namespace TLDR_Capstone.Classes
 	public class Course
 	{
         //Constructor
-        public Course(String pDeptID, String pName, int pCourseID, String pInstructor, List<Section> pSections)
+        public Course(String pDeptID, int pCourseID, String pName, String pInstructor, List<Section> pSections)
         {
+            deptID = pDeptID;
             name = pName;
             courseID = pCourseID;
             instructor = pInstructor;
