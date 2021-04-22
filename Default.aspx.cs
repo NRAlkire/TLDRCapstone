@@ -29,7 +29,7 @@ namespace TLDR_Capstone
 			if (value.Trim().Equals(Login.Password))
 			{
 				e.Authenticated = true;
-				Response.Redirect("~/About");
+				Response.Redirect("~/html_css/student-dashboard.html");
 
 			}
 
