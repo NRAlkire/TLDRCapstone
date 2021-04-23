@@ -130,13 +130,12 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="html_css\account-verification.html" />
     <Content Include="html_css\admin-dashboard.html" />
-    <Content Include="html_css\css\log-reg-stylesheet.css" />
-    <Content Include="html_css\css\log_reg_styles.css" />
+    <Content Include="html_css\course_catalog.html" />
+    <Content Include="html_css\css\interior-stylesheet.css" />
     <Content Include="html_css\css\main-stylesheet.css" />
-    <Content Include="html_css\css\style.css" />
     <Content Include="html_css\css\stylesheet.css" />
-    <Content Include="html_css\css\test-style.css" />
     <Content Include="html_css\login.html" />
     <Content Include="html_css\registration.html" />
     <Content Include="html_css\root-dashboard.html" />

@@ -1,0 +1,15 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: sans-serif;
+}
+body {
+	
+}
+.catalog_table {
+	width: 100%;
+	background-color: #ffffff;
+	color: #000000;
+	font-size: 25px;
+	text-align: left;
+}
