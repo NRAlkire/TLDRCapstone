@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Microsoft.VisualBasic.FileIO;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace TLDR_Capstone.Classes
 {
@@ -12,6 +12,10 @@ namespace TLDR_Capstone.Classes
         public Catalog(List<Course> pCourses)
         {
             courses = pCourses;
+        }
+        public Catalog()
+        {
+            courses = null;
         }
 
         //Members
@@ -90,6 +94,10 @@ namespace TLDR_Capstone.Classes
                     //get the days the class meets on
                     String Days = temp[5].Substring(0, temp[5].IndexOf(" "));
 
+
+
+                    //Using days as a string
+                    /*
                     //create a boolean list for Monday to Friday, with Monday as 0 and all days as false
                     List<Boolean> MeetDays = new List<Boolean> { false, false, false, false, false };
 
@@ -114,16 +122,30 @@ namespace TLDR_Capstone.Classes
                     {
                         MeetDays[4] = true;
                     }
-
+                    */
                     //add the section to the course
-                    courses[courses.Count - 1].addSection(new Section(temp[0], Int32.Parse(temp[1]), temp[2], temp[3], beginTime, endTime, MeetDays));
+                    courses[courses.Count - 1].addSection(new Section(temp[0], Int32.Parse(temp[1]), temp[2], temp[3], temp[4], beginTime, endTime, Days));
 
                 }
             }
 
             setCourses(courses);
 
-            
+            string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+            SqlConnection con = new SqlConnection(constr);
+
+
+            string query = "TRUNCATE TABLE Catalog";
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+            query = "TRUNCATE TABLE Schedule";
+            cmd = new SqlCommand(query, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
 
             foreach (Course c in courses)
             {
@@ -134,6 +156,7 @@ namespace TLDR_Capstone.Classes
                 }
             }
             
+
             return;
         }
     }

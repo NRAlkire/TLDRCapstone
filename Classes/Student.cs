@@ -6,8 +6,8 @@ using TLDR_Capstone.Classes;
 
 namespace TLDR_Capstone
 {
-	public class Student
-	{
+    public class Student
+    {
         //Members
         public List<Course> potentialCourses, selectedCourses, validSchedule;
         public List<List<Section>> allValidSchedules;
@@ -42,12 +42,14 @@ namespace TLDR_Capstone
                     //Checking for overlap. If the begin or end time of section i falls within
                     //begin and end time of section j, there is overlap
 
+
+
                     //First check to see if course is same day
-                    if ((pSections[i].getMeetDays()[0] && pSections[j].getMeetDays()[0])    //Monday
-                    || (pSections[i].getMeetDays()[1] && pSections[j].getMeetDays()[1])     //Tuesday
-                    || (pSections[i].getMeetDays()[2] && pSections[j].getMeetDays()[2])     //Wednesday
-                    || (pSections[i].getMeetDays()[3] && pSections[j].getMeetDays()[3])     //Thursday
-                    || (pSections[i].getMeetDays()[4] && pSections[j].getMeetDays()[4]))
+                    if ((pSections[i].getBMeetDays()[0] && pSections[j].getBMeetDays()[0])    //Monday
+                    || (pSections[i].getBMeetDays()[1] && pSections[j].getBMeetDays()[1])     //Tuesday
+                    || (pSections[i].getBMeetDays()[2] && pSections[j].getBMeetDays()[2])     //Wednesday
+                    || (pSections[i].getBMeetDays()[3] && pSections[j].getBMeetDays()[3])     //Thursday
+                    || (pSections[i].getBMeetDays()[4] && pSections[j].getBMeetDays()[4]))
                     {  //Friday
                         if (((pSections[i].getBeginTime() > pSections[j].getBeginTime()) &&
                             (pSections[i].getBeginTime() < pSections[j].getEndTime())) ||
@@ -140,5 +142,34 @@ namespace TLDR_Capstone
 
             return validSchedules;
         }
+        /*public List<Boolean> convDays2Bool(String pDays)
+        {
+            //create a boolean list for Monday to Friday, with Monday as 0 and all days as false
+            List<Boolean> MeetDays = new List<Boolean> { false, false, false, false, false };
+
+            //if the days are in the string, set the day true in the list
+            if (pDays.Contains("M"))
+            {
+                MeetDays[0] = true;
+            }
+            if (pDays.Contains("T"))
+            {
+                MeetDays[1] = true;
+            }
+            if (pDays.Contains("W"))
+            {
+                MeetDays[2] = true;
+            }
+            if (pDays.Contains("R"))
+            {
+                MeetDays[3] = true;
+            }
+            if (pDays.Contains("F"))
+            {
+                MeetDays[4] = true;
+            }
+
+            return MeetDays;
+        }*/
     }
 }

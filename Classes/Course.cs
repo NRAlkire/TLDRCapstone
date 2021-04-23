@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
+using System.Configuration;
+
 
 namespace TLDR_Capstone.Classes
 {
@@ -87,14 +87,15 @@ namespace TLDR_Capstone.Classes
 
         public void insertCourses()
         {
-            SqlConnection con = new SqlConnection();
-            string query = "INSERT INTO Courses(DeptID,CourseID,Name) VALUES(@DeptID,@CourseID,@Name)";
+            string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+            SqlConnection con = new SqlConnection(constr);
 
+            string query = "INSERT INTO Catalog(DeptID,CourseNumber,CourseTitle) VALUES(@DeptID,@CourseNumber,@CourseTitle)";
             SqlCommand cmd = new SqlCommand(query, con);
-            
-            cmd.Parameters.AddWithValue("@DeptID", getDeptID());
-            cmd.Parameters.AddWithValue("@CourseID", getCourseID());
-            cmd.Parameters.AddWithValue("@Name", getName());
+
+            cmd.Parameters.AddWithValue("@deptID", getDeptID());
+            cmd.Parameters.AddWithValue("@CourseNumber", getCourseID());
+            cmd.Parameters.AddWithValue("@courseTitle", getName());
 
             con.Open();
             cmd.ExecuteNonQuery();

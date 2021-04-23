@@ -3,28 +3,42 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Configuration;
 
 namespace TLDR_Capstone.Classes
 {
 	public class Section
 	{
         //Constructor
-        public Section(String pDeptID, int pCourseID, String pSection, String pInstructor, int pBeginTime, int pEndTime, List<Boolean> pMeetDays)
+        public Section(String pDeptID, int pCourseNumber, String pCourseTitle, String pSection, String pInstructor, int pBeginTime, int pEndTime, string pMeetDays)
         {
-            courseID = pCourseID;
+            deptID = pDeptID;
+            courseNumber = pCourseNumber;
+            courseTitle = pCourseTitle;
             section = pSection;
             instructor = pInstructor;
             beginTime = pBeginTime;
             endTime = pEndTime;
             meetDays = pMeetDays;
+            bMeetDays = null;
         }
 
         //Members
-        public String deptID, section, instructor;
-        public int courseID, beginTime, endTime;
-        public List<Boolean> meetDays;
+        public String deptID, courseTitle, section, instructor, meetDays;
+		public int courseNumber, beginTime, endTime;
+        List<Boolean> bMeetDays;
 
         //Getters and Setters
+        public String getCourseTitle()
+        {
+            return courseTitle;
+        }
+
+        public void setCourseTitle(String pCourseTitle)
+        {
+            courseTitle = pCourseTitle;
+            return;
+        }
         public String getDeptID()
         {
             return deptID;
@@ -37,12 +51,12 @@ namespace TLDR_Capstone.Classes
         }
         public int getCourseNum()
         {
-            return courseID;
+            return courseNumber;
         }
 
         public void setCourseNum(int courseNum)
         {
-            this.courseID = courseNum;
+            this.courseNumber = courseNum;
         }
 
         public String getSection()
@@ -65,14 +79,44 @@ namespace TLDR_Capstone.Classes
             this.instructor = instructor;
         }
 
-        public List<Boolean> getMeetDays()
+        public string getMeetDays()
         {
             return meetDays;
         }
 
-        public void setMeetDays(List<Boolean> meetDays)
+        public void setMeetDays(string meetDays)
         {
             this.meetDays = meetDays;
+        }
+
+        public List<Boolean> getBMeetDays()
+        {
+            //create a boolean list for Monday to Friday, with Monday as 0 and all days as false
+            List<Boolean> MeetDays = new List<Boolean> { false, false, false, false, false };
+
+            //if the days are in the string, set the day true in the list
+            if (meetDays.Contains("M"))
+            {
+                MeetDays[0] = true;
+            }
+            if (meetDays.Contains("T"))
+            {
+                MeetDays[1] = true;
+            }
+            if (meetDays.Contains("W"))
+            {
+                MeetDays[2] = true;
+            }
+            if (meetDays.Contains("R"))
+            {
+                MeetDays[3] = true;
+            }
+            if (meetDays.Contains("F"))
+            {
+                MeetDays[4] = true;
+            }
+
+            return MeetDays;
         }
 
         public int getBeginTime()
@@ -97,13 +141,22 @@ namespace TLDR_Capstone.Classes
 
         public void insertSections()
         {
-            SqlConnection con = new SqlConnection();
-            string query = "INSERT INTO Sections(Instructor,Section) VALUES(@Instructor,@Section)";
+            string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+            SqlConnection con = new SqlConnection(constr);
+            string query = "INSERT INTO Schedule(Username, DeptID, CourseNumber, CourseTitle, Instructor, Days, StartTime, EndTime) " +
+                "VALUES(@Username, @DeptID, @CourseNumber, @CourseTitle, @Instructor, @Days, @StartTime, @EndTime)";
 
             SqlCommand cmd = new SqlCommand(query, con);
 
+
+            cmd.Parameters.AddWithValue("@Username", "testuser");
+            cmd.Parameters.AddWithValue("@DeptID", getDeptID());
+            cmd.Parameters.AddWithValue("@CourseNumber", getCourseNum());
+            cmd.Parameters.AddWithValue("@CourseTitle", getCourseTitle());
             cmd.Parameters.AddWithValue("@Instructor", getInstructor());
-            cmd.Parameters.AddWithValue("@Section", getSection());
+            cmd.Parameters.AddWithValue("@Days", getMeetDays());
+            cmd.Parameters.AddWithValue("@StartTime", getBeginTime());
+            cmd.Parameters.AddWithValue("@EndTime", getEndTime());
 
             con.Open();
             cmd.ExecuteNonQuery();
