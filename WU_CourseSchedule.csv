@@ -1,0 +1,153 @@
+deptID,courseNumber,courseTitle,sectionID,instructor,days,startTime,endTime
+ACOM,1300,Intro to Communication,1,Sollars,MWF,900,950
+ACOM,1300,Intro to Communication,2,Rogers,MWF,1000,1050
+ACOM,1300,Intro to Communication,3,Rogers,MWF,1100,1150
+ACOM,1300,Intro to Communication,4,Johnston,TR,800,915
+ACOM,1300,Intro to Communication,5,Johnston,TR,925,1040
+ACOM,1300,Intro to Communication,6,Johnston,TR,1050,1105
+ACOM,3300,Interpersonal Communication,1,Mirivel,TR,925,1040
+ACOM,3320,Persuasive Presentations,1,McIntyre,MWF,1000,1050
+ACOM,3330,Professional Communication,1,Mirivel,TR,800,915
+ACOM,4300,Senior Capstone Project,9S1,McIntyre,MWF,1100,1150
+ACOM,4312,Intercultural Communication,9H1,Driskill,T,1050,1205
+ACOM,4313,SM:Listening & Civil Discourse,9H3,Chatham-Carpenter,MW,900,950
+ACOM,4314,Comm Skill Ctr Internship,9S1,McIntyre,M,1200,1250
+ANTH,1415,Physical Anthropology,1,Amsler,MWF,900,950
+ANTH,2316,Understanding Cultures,1,Flinn,TR,1050,1205
+ANTH,3312,North American Indians,1,Flinn,MWF,1000,1050
+ANTH,3320,"Buried Cities, Ancient Lives",1,Lewis,MW,1340,1455
+ANTH,3381,Social Stat,1,Lopez,MWF,900,950
+ANTH,4316,Linguistic Anthropology,1,Flinn,TR,1215,1455
+ANTH,4312,Religion Soc & Culture,1,Hale,TR,925,1040
+ARHA,2305,Intro to Visual Art,1,Lee,TR,1050,1205
+ARHA,2310,Art History Survey I,9S1,Miller,TR,925,1040
+ARHA,2311,Art History Survey II,1,Nunnally,MWF,1100,1150
+ARHA,2312,Survey of Non-Western Art,9S1,Larsen,T,1800,2040
+ARHA,4307,18th/18th Europe,9S1,Martin,TR,925,1040
+ARHA,4310,ST: African American Art,9S2,Larsen,TR,1340,1455
+BINS,3305,Mgmt Info Systems,1,Dunaway,TR,925,1040
+BINS,3305,Mgmt Info Systems,2,Woolridge,TR,1050,1205
+BINS,3305,Mgmt Info Systems,3,Chachere,M,1800,2040
+BINS,3307,Systems Develop Method,1,Kim,T,1800,2040
+BINS,3352,Data Analysis/Visualization,1,Chachere,TR,800,915
+BINS,3352,Data Analysis/Visualization,2,Kumi,TR,1215,1330
+BINS,3352,Data Analysis/Visualization,3,Wang,M,1800,2040
+BINS,3380,Business Communication,1,Reed,R,1800,2040
+BINS,3380,Business Communication,2,Clements,MW,1100,1215
+BINS,4312,Object-Oriented Programming,1,Kumi,T,1800,2040
+BINS,3414,Advanced Programming,1,Wang,TR,925,1040
+BINS,4350,Bus Data Mgmt Systems,1,Kim,TR,1215,1330
+BINS,4351,Data Analysis and Reporting,1,Woolridge,T,1800,2040
+BINS,4352,Big Data Analytics Tools,1,Woolridge,T,1800,2040
+BIOL,1102,Intro Biology Lab,10,Staff,M,1340,1620
+BIOL,1111,Intro A&P II Laboratory,10,Staff,W,1340,1620
+BIOL,1112,Intro A&P I Laboratory,10,Staff,R,1050,1205
+BIOL,1400,Evol & Envir Biology,10,Woolbright,TR,1050,1205
+BIOL,1400,Evol & Envir Biology,10,Woolbright,T,1215,1405
+BIOL,1401,Science of Biology,10,Staff,TR,925,1040
+BIOL,1401,Science of Biology,10,Staff,T,1050,1240
+BIOL,1402,Biological Concepts I,10,Leacock,MWF,900,950
+BIOL,1402,Biological Concepts I Lab,10L,Staff,M,1340,1620
+BIOL,1402,Biological Concepts I Lab,12L,Staff,T,1340,1620
+BIOL,1402,Biological Concepts I Lab,11L,Staff,W,1340,1620
+BIOL,1402,Biological Concepts I,20,Leacock,MWF,1215,1305
+BIOL,1411,Intro Human Anat & Physiol I,10,Landers,MWF,1215,1305
+BIOL,1411,Intro Huam A&P I Lab,11L,Landers,M,900,1150
+BIOL,1411,Intro Huam A&P I Lab,12L,Staff,W,900,1150
+BIOL,1411,Intro Huam A&P I Lab,13L,Staff,W,1340,1620
+BIOL,1412,Intro Human Anat & Physiol II,10,Landers,TR,925,1040
+BIOL,1412,Intro Huam A&P II Lab,11L,Landers,T,1050,1330
+BIOL,1412,Intro Huam A&P II Lab,12L,Landers,R,1050,1330
+BIOL,1433,Essentials Anatomy&Physiology,10,Hearnberger,TR,1800,1915
+BIOL,1433,Essentials Anat & Phys Lab,11L,Staff,T,1925,2005
+BIOL,2401,Microbiology,10,Ali,TR,1215,1330
+BIOL,2401,Microbiology Lab,11L,Ali,TR,1340,1455
+BIOL,2401,Microbiology Lab,12L,Staff,TR,1505,1620
+BIOL,2401,Microbiology Lab,13L,Staff,MW,1925,2040
+BIOL,2401,Microbiology,20,Staff,MW,1800,1915
+BIOL,2403,Zoology,20,Grace,MWF,1000,1050
+BIOL,3402,Human Anatomy,10,Allen,TR,925,1205
+BIOL,4305,Animal Behavior,10,Sikes,TR,925,1040
+BIOL,4315,Toxicology,10,Stapleton,TR,1050,1205
+CPSC,1105,FYE for Computing Majors,1,Bullwinkle,TR,1340,1455
+CPSC,1370,Computer Literacy,1,Bolt,MW,1340,1455
+CPSC,1375,Programming I,1,Orme,TR,925,1040
+CPSC,1375,Programming I,2,Orme,TR,1630,1745
+CPSC,2376,Programming II,1,Orme,TR,1050,1205
+CPSC,2377,Intro to Game Programming,1,Rodriguez,TR,1505,1620
+CPSC,2380,Algorithms,1,Chiang,TR,1050,1205
+CPSC,2482,Computer Organization,1,Vieira,TR,1215,1330
+CPSC,3396,Computer Sys & Assembly,1,Orme,TR,1502,1620
+CPSC,3375,Database Concepts,1,Staff,TR,1340,1455
+CPSC,3380,Operating Systems,1,Bolt,MW,1050,1205
+CPSC,3383,Programming Languages,1,Springer,TR,1630,1745
+CPSC,4367,Mobile Apps Development,1,Rodriguez,MW,1630,1745
+CPSC,4373,Software Engineering,1,Keltch,TR,1505,1620
+CPSC,4376,Applied Cryptography,1,Chiang,MW,1340,1455
+CPSC,4383,Artificial Intelligence,1,Milanova,MW,1215,1330
+CPSC,4387,Distributed Computing,1,Huff,MW,1215,1330
+CPSC,4392,Capstone Project,1,Bullwinkle,TR,925,1040
+CSEC,1310,Intro to Cybersecurity,1,Huff,TR,1215,1330
+CSEC,3300,Digital Forensics,1,Passmore,TR,1800,1915
+ENGL,2336,Intro to Creative Writing,1,Hummel Ecke,TR,1050,1205
+ENGL,2337,World Literature,9S2,Minnick,MW,1340,1455
+ENGL,2339,Mythology,1,Ecke,MWF,1100,1150
+ENGL,2339,Mythology,2,Hunter,TR,1215,1330
+ENGL,3312,"Grammer, Morphology & Syntax",9S1,Minnick,MWF,1100,1150
+ENGL,3330,Approaches To Lit,1,McAbee,TR,925,1040
+ENGL,3348,School Books,9S1,Minnick,T,1630,1910
+ENGL,4303,Teaching English,1,Crutcher,MW,1800,1915
+HIST,1311,Hist Of Civilization I,1,Anson,MWF,1100,1150
+HIST,1311,Hist Of Civilization I,2,Yeaw,MW,1215,1330
+HIST,1311,Hist Of Civilization I,3,Yeaw,MW,1340,1455
+HIST,1312,Hist Of Civilization II,1,Marvin,MW,1215,1330
+HIST,1312,Hist Of Civilization II,2,Marvin,MW,1340,1455
+HIST,2311,US History To 1877,1,Mann,TR,1215,1330
+HIST,2312,US History Since 1877,1,Mitchell,TR,1050,1205
+HIST,2312,US History Since 1878,2,Mitchell,TR,1215,1330
+HIST,3303,Hellenistic Age,1,Anson,MWF,1000,1050
+HIST,3353,New Republic: U.S. 1787-1848,1,Ross,TR,1215,1330
+IFSC,1105,FYE for Computing Majors,1,Lierce,TR,1340,1455
+IFSC,1202,Intro to Obj-Oriented Tech,1,Bauer,MW,900,1050
+IFSC,1310,Web Technologies,1,Wallace,MW,1340,1455
+IFSC,1310,Web Technologies,2,Wallace,TR,925,1040
+IFSC,2300,Object-Oriented Technology,1,Tudoreanu,MW,900,1050
+IFSC,2305,Computer Systems,1,Dagtas,MW,1100,1215
+IFSC,3300,Web Client Applications,1,Berleant,MW,1340,1455
+IFSC,3320,Database Concepts,1,Wu,TR,925,1040
+IFSC,3360,System Analysis and Design,1,Agarwal,TR,1050,1205
+IFSC,4325,Data Mining concepts & Tech,1,Xu,TR,1505,1620
+IFSC,4330,Database Security,1,Wu,TR,1340,1455
+IFSC,4345,Information Visualization,1,Tudoreanu,T,1800,2040
+IFSC,4365,Web Server Applications,1,Dagtas,MW,900,1015
+MATH,102,College Algebra Lab,9H1,Staff,F,1000,1050
+MATH,102,College Algebra Lab,9H2,Staff,R,950,1040
+MATH,102,College Algebra Lab,9H3,Staff,T,1340,1620
+MATH,121,Quant & Math Reasoning Lab,9H1,Staff,M,1000,1050
+MATH,332,Foundations of College Algebra,9H1,Shaw,MWF,900,950
+MATH,332,Foundations of College Algebra,9H2,Umphers,MWF,1100,1150
+MATH,332,Foundations of College Algebra,9H3,Umphers,MWF,1340,1455
+MATH,332,Foundations of College Algebra,9H4,Embry,TR,925,1040
+MATH,1223,Intro to Math Software,9H1,Barker,MW,1000,1050
+MATH,1302,College Algebra,9H1,Deng,MWF,900,950
+MATH,1302,College Algebra,9H2,Deng,TR,1050,1205
+MATH,1302,College Algebra,9H3,Streett,TR,1215,1330
+MATH,1302,College Algebra,9H4,Famuyiwa,MWF,1100,1150
+MATH,1302,College Algebra,9H5,Hardeman,TR,1050,1205
+MATH,1302,College Algebra,9H6,Streett,MW,1330,1455
+MATH,1303,Trigonometry,9H1,Umphers,MWF,900,950
+MATH,1303,Trigonometry,9H3,Jackson,TR,1215,1330
+MATH,1321,Quant & Athmtl Reasoning,9H2,Hardeman,TR,1340,1455
+MATH,1321,Quant & Athmtl Reasoning,9H3,Turner,MWF,900,950
+MATH,1342,App Cal I - Bus/ET/Life Sc,9H1,Umphers,MWF,1000,1050
+MATH,1342,App Cal I - Bus/ET/Life Sc,9H2,Famuyiwa,MW,1505,1620
+MATH,1342,App Cal I - Bus/ET/Life Sc,9H3,Umphers,TR,1215,1330
+MATH,1343,App Cal II - Bus/ET/Life Sc,9H1,Jackson,TR,1050,1205
+MATH,1451,Calculus I,9H1,Jones,MWF,1000,1050
+MATH,1451,Calculus I,9H2,Wang,TR,900,1040
+MATH,1452,Calculus II,9H1,Fulmer,MW,1340,1455
+MATH,2310,Discete Mathematics,9H1,Embry,MW,1630,1745
+MATH,2453,Calculus III,9H1,Kaufmann,MW,1000,1050
+MATH,3312,Linear Algebra,9H1,Wang,TR,1215,1330
+MATH,3322,Intro Differ Equatns,9H1,Kosmatov,TR,1215,1330
+MATH,3382,Math II for Elementarty Educ,9H1,Lu,TR,900,1040
