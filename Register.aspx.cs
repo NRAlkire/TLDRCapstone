@@ -34,21 +34,12 @@ namespace TLDR_Capstone
 				conn.Open();
 				if (command.ExecuteScalar() == null)
 				{
-
-					//generate random number
-					Random random = new Random();
-					int randomInt = random.Next(1000, 10000);
-					Boolean isVerified = false;
-
-					
-					
-
 					string to = emailTB.Text; //To address    
 					string from = "scheduleplannerdonotreply@gmail.com"; //From address   
 					MailMessage message = new MailMessage(from, to);  
 
 					//Body of message
-					string mailbody = "Please enter the following number at /*insert link*/ to verify your account: " + randomInt.ToString(); //insert number here
+					string mailbody = "Please enter your email at /*insert link*/ to verify your account.";
 					//Subject of message
 					message.Subject = "Registration Verification";  
 					message.Body = mailbody;  
@@ -70,9 +61,9 @@ namespace TLDR_Capstone
 						throw ex;  
 					}  ;
 
-					//store random number in database and false Boolean value
+					//store false Boolean value database
 					//put following line into code below once sql tables are updated
-					//("insert into Users (verificationnumber, verified) " + "Values('" + randomInt + "', '" + isVerified + "')", conn)
+					//("insert into Users (verified) " + "Values('" + isVerified + "')", conn)
 					conn.Close();
 					command = new SqlCommand("insert into Users (username, password, authlevel, email) " +
 						"VALUES('" + userTB.Text + "', '" + passTB.Text + "', '" + accessLvlDD.SelectedIndex + "', '" + emailTB.Text + "')", conn);

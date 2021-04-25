@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\App_Data",
-    "\\Classes"
+    "\\Classes",
+    "\\html_css"
   ],
-  "SelectedNode": "\\App_Data\\ProjectDB_log.ldf",
+  "SelectedNode": "\\html_css\\student-dashboard.html",
   "PreviewInSolutionExplorer": false
 }
