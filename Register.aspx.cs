@@ -4,6 +4,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Net;
+using System.Net.Mail;
+using System.Text;
 
 
 namespace TLDR_Capstone
@@ -31,11 +34,50 @@ namespace TLDR_Capstone
 				conn.Open();
 				if (command.ExecuteScalar() == null)
 				{
-					conn.Close();
-					command = new SqlCommand("insert into Users (username, password, authlevel) " +
-						"VALUES('" + userTB.Text + "', '" + passTB.Text + "', '" + accessLvlDD.SelectedIndex + "')", conn);
 
-					debug.Text = userTB.Text + passTB.Text + accessLvlDD.SelectedIndex;
+					//generate random number
+					Random random = new Random();
+					int randomInt = random.Next(1000, 10000);
+					Boolean isVerified = false;
+
+					
+					
+
+					string to = emailTB.Text; //To address    
+					string from = "scheduleplannerdonotreply@gmail.com"; //From address   
+					MailMessage message = new MailMessage(from, to);  
+
+					//Body of message
+					string mailbody = "Please enter the following number at /*insert link*/ to verify your account: " + randomInt.ToString(); //insert number here
+					//Subject of message
+					message.Subject = "Registration Verification";  
+					message.Body = mailbody;  
+					message.BodyEncoding = Encoding.UTF8;  
+					message.IsBodyHtml = true;  
+					SmtpClient client = new SmtpClient("smtp.gmail.com", 587); //Gmail smtp    
+					System.Net.NetworkCredential basicCredential1 = new System.Net.NetworkCredential("scheduleplannerdonotreply@gmail.com", "TLDRCapstone0=");  
+					client.EnableSsl = true;  
+					client.UseDefaultCredentials = false;  
+					client.Credentials = basicCredential1;  
+
+					try   
+					{  
+						client.Send(message);  
+					}   
+  
+					catch (Exception ex)   
+					{  
+						throw ex;  
+					}  ;
+
+					//store random number in database and false Boolean value
+					//put following line into code below once sql tables are updated
+					//("insert into Users (verificationnumber, verified) " + "Values('" + randomInt + "', '" + isVerified + "')", conn)
+					conn.Close();
+					command = new SqlCommand("insert into Users (username, password, authlevel, email) " +
+						"VALUES('" + userTB.Text + "', '" + passTB.Text + "', '" + accessLvlDD.SelectedIndex + "', '" + emailTB.Text + "')", conn);
+
+					debug.Text = userTB.Text + passTB.Text + accessLvlDD.SelectedIndex + emailTB.text;
 
 					conn.Open();
 					command.ExecuteNonQuery();

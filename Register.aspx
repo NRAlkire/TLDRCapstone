@@ -11,6 +11,8 @@
 
 			<div style="height: 30px">Confirm Password:  </div>
 
+			<div style="height: 30px">Email:  </div>
+
 			<div style="height: 30px">Access Level Requested:  </div>
 		</div>
 		<div style="width: 50%; float: right">
@@ -22,6 +24,9 @@
 			</div>
 			<div style="height: 30px">
 				<asp:TextBox ID="passConfTB" runat="server" Height="20px" TextMode="Password"></asp:TextBox>
+			</div>
+			<div style="height: 30px">
+				<asp:TextBox ID="emailTB" runat="server" Height="20px"></asp:TextBox>
 			</div>
 			<div style="height: 30px">
 				<asp:DropDownList ID="accessLvlDD" runat="server" Height="20px">
