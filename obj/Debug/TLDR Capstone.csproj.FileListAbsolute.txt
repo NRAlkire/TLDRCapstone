@@ -367,3 +367,11 @@ C:\Users\arthu\Source\Repos\TLDR-Capstone\obj\Debug\TLDR Capstone.csproj.CoreCom
 C:\Users\arthu\Source\Repos\TLDR-Capstone\obj\Debug\TLDR Capstone.csproj.CopyComplete
 C:\Users\arthu\Source\Repos\TLDR-Capstone\obj\Debug\TLDR Capstone.dll
 C:\Users\arthu\Source\Repos\TLDR-Capstone\obj\Debug\TLDR Capstone.pdb
+C:\Brad School\Spring 2021\Capstone Project\TLDR Capstone\bin\EntityFramework.dll
+C:\Brad School\Spring 2021\Capstone Project\TLDR Capstone\bin\EntityFramework.SqlServer.dll
+C:\Brad School\Spring 2021\Capstone Project\TLDR Capstone\bin\Microsoft.Configuration.ConfigurationBuilders.Base.dll
+C:\Brad School\Spring 2021\Capstone Project\TLDR Capstone\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll
+C:\Brad School\Spring 2021\Capstone Project\TLDR Capstone\bin\EntityFramework.xml
+C:\Brad School\Spring 2021\Capstone Project\TLDR Capstone\bin\EntityFramework.SqlServer.xml
+C:\Brad School\Spring 2021\Capstone Project\TLDR Capstone\bin\Microsoft.Configuration.ConfigurationBuilders.Base.xml
+C:\Brad School\Spring 2021\Capstone Project\TLDR Capstone\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml

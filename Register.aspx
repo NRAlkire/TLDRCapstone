@@ -1,6 +1,4 @@
-﻿<%@ Page Title="Register User Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="TLDR_Capstone.Register" %>
-
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+﻿<%@ Page Title="Register User Page" Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="TLDR_Capstone.Register" %>
 
 	<h1>Schedule Planner: Register User</h1>
 	<div>

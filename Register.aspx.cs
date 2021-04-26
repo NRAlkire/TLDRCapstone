@@ -68,7 +68,7 @@ namespace TLDR_Capstone
 					command = new SqlCommand("insert into Users (username, password, authlevel, email) " +
 						"VALUES('" + userTB.Text + "', '" + passTB.Text + "', '" + accessLvlDD.SelectedIndex + "', '" + emailTB.Text + "')", conn);
 
-					debug.Text = userTB.Text + passTB.Text + accessLvlDD.SelectedIndex + emailTB.text;
+					debug.Text = userTB.Text + passTB.Text + accessLvlDD.SelectedIndex + emailTB.Text;
 
 					conn.Open();
 					command.ExecuteNonQuery();

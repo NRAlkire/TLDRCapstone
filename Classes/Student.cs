@@ -11,7 +11,28 @@ namespace TLDR_Capstone
         //Members
         public List<Course> potentialCourses, selectedCourses, validSchedule;
         public List<List<Section>> allValidSchedules;
+        public string username;
+        public int authLvl;
 
+        public void setUsername(string pUser)
+        {
+            username = pUser;
+        }
+
+        public string getUsername()
+        {
+            return username;
+        }
+
+        public void setAuthLvl(int pLvl)
+        {
+            authLvl = pLvl;
+        }
+
+        public int getAuthLvl()
+        {
+            return authLvl;
+        }
         //Add a single course to the list of potential courses
         public void addPotentialCourse(Course pCourse)
         {

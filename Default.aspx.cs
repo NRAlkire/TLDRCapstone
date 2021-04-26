@@ -29,6 +29,17 @@ namespace TLDR_Capstone
 			if (value.Trim().Equals(Login.Password))
 			{
 				e.Authenticated = true;
+				Student student = new Student();
+				student.setUsername(Login.UserName);
+				command = new SqlCommand("select authlevel from users where username = " +
+					"'" + student.getUsername() + "'");
+
+				command.Connection = conn;
+				conn.Open();
+				student.setAuthLvl((int)command.ExecuteScalar());
+				conn.Close();
+
+				Session["Student"] = student;
 				Response.Redirect("~/html_css/student-dashboard.html");
 
 			}

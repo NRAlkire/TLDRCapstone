@@ -42,6 +42,15 @@ namespace TLDR_Capstone
 		protected global::System.Web.UI.WebControls.TextBox passConfTB;
 
 		/// <summary>
+		/// emailTB control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox emailTB;
+
+		/// <summary>
 		/// accessLvlDD control.
 		/// </summary>
 		/// <remarks>
