@@ -35,43 +35,7 @@ namespace TLDR_Capstone
 				if (command.ExecuteScalar() == null)
 				{
 					
-					string to = emailTB.Text; //To address    
-					string from = "scheduleplannerdonotreply@gmail.com"; //From address   
-					MailMessage message = new MailMessage(from, to);
-
-					String mailbody = "";
-					//Student request
-					if (accessLvlDD.SelectedIndex == 0)
-					{
-						//Body of message
-						mailbody = "Please enter your email at /*insert link*/ to verify your account.";
-					}
-					//Admin or Root request
-					else
-                    {
-						mailbody = "You will receive an email when your account has been reviewed by a root user.";
-                    }
-
-					//Subject of message
-					message.Subject = "Registration Verification";  
-					message.Body = mailbody;  
-					message.BodyEncoding = Encoding.UTF8;  
-					message.IsBodyHtml = true;  
-					SmtpClient client = new SmtpClient("smtp.gmail.com", 587); //Gmail smtp    
-					System.Net.NetworkCredential basicCredential1 = new System.Net.NetworkCredential("scheduleplannerdonotreply@gmail.com", "TLDRCapstone0=");  
-					client.EnableSsl = true;  
-					client.UseDefaultCredentials = false;  
-					client.Credentials = basicCredential1;  
-
-					try   
-					{  
-						client.Send(message);  
-					}   
-  
-					catch (Exception ex)   
-					{  
-						throw ex;  
-					}  ;
+					
 
 					conn.Close();
 					command = new SqlCommand("INSERT INTO Users (username, password, authlevel, email) " +
@@ -87,6 +51,55 @@ namespace TLDR_Capstone
 					conn.Open();
 					command.ExecuteNonQuery();
 					debug.Text = "User successfully added.";
+					conn.Close();
+
+					command = new SqlCommand("INSERT INTO Registration (registrationColumnID, verified) " 
+						+ "VALUES(@registrationColumnID, @verified)", conn);
+
+					command.Parameters.AddWithValue("@registrationColumnID", userTB.Text);
+					command.Parameters.AddWithValue("@verified", false);
+
+					conn.Open();
+					command.ExecuteNonQuery();
+
+					//sending the email
+					string to = emailTB.Text; //To address    
+					string from = "scheduleplannerdonotreply@gmail.com"; //From address   
+					MailMessage message = new MailMessage(from, to);
+
+					String mailbody = "";
+					//Student request
+					if (accessLvlDD.SelectedIndex == 0)
+					{
+						//Body of message
+						mailbody = "Please enter your email at /*insert link*/ to verify your account.";
+					}
+					//Admin or Root request
+					else
+					{
+						mailbody = "You will receive an email when your account has been reviewed by a root user.";
+					}
+
+					//Subject of message
+					message.Subject = "Registration Verification";
+					message.Body = mailbody;
+					message.BodyEncoding = Encoding.UTF8;
+					message.IsBodyHtml = true;
+					SmtpClient client = new SmtpClient("smtp.gmail.com", 587); //Gmail smtp    
+					System.Net.NetworkCredential basicCredential1 = new System.Net.NetworkCredential("scheduleplannerdonotreply@gmail.com", "TLDRCapstone0=");
+					client.EnableSsl = true;
+					client.UseDefaultCredentials = false;
+					client.Credentials = basicCredential1;
+
+					try
+					{
+						client.Send(message);
+					}
+
+					catch (Exception ex)
+					{
+						throw ex;
+					};
 				}
 				else
 				{
