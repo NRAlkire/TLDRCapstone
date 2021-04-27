@@ -8,6 +8,17 @@ namespace TLDR_Capstone
 {
     public class Student
     {
+        //Constructor
+        public Student()
+        {
+            potentialCourses = new List<Course>();
+            selectedCourses = new List<Course>();
+            validSchedule = new List<Course>();
+            allValidSchedules = new List<List<Section>>();
+            username = "default";
+            authLvl = 0;
+        }
+
         //Members
         public List<Course> potentialCourses, selectedCourses, validSchedule;
         public List<List<Section>> allValidSchedules;

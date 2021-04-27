@@ -60,7 +60,7 @@ namespace TLDR_Capstone.Classes
                     if (courses.Count == 0 || !courses[courses.Count - 1].getDeptID().Equals(temp[0]) || courses[courses.Count - 1].getCourseID() != Int32.Parse(temp[1]))
                     {
                         //add the new course
-                        courses.Add(new Course(temp[0], Int32.Parse(temp[1]), temp[2], temp[4], new List<Section>()));
+                        courses.Add(new Course(temp[0], Int32.Parse(temp[1]), temp[2], new List<Section>()));
                     }
 
                     String stringStartTime, stringEndTime;

@@ -22,6 +22,7 @@ namespace TLDR_Capstone
 			SqlCommand command = new SqlCommand("select password from Users where username = '" + Login.UserName + "'");
 			
 			command.Connection = conn;
+
 			conn.Open();
 			string value = (string)command.ExecuteScalar();
 			conn.Close();
@@ -43,7 +44,7 @@ namespace TLDR_Capstone
 
 				Session["Student"] = student;
 
-				Response.Redirect("~/html_css/student-dashboard.html");
+				Response.Redirect("./css/student-dashboard.html");
 
 			}
 

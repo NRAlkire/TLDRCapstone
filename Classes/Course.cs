@@ -9,13 +9,12 @@ namespace TLDR_Capstone.Classes
 	public class Course
 	{
         //Constructor
-        public Course(String pDeptID, int pCourseID, String pName, String pInstructor, List<Section> pSections)
+        public Course(String pDeptID, int pCourseID, String pName, List<Section> pSections)
         {
             deptID = pDeptID;
             name = pName;
             courseID = pCourseID;
-            instructor = pInstructor;
-            sections = pSections;
+            sections = new List<Section>();
         }
 
         //Members
@@ -63,16 +62,6 @@ namespace TLDR_Capstone.Classes
         public void setCourseID(int courseID)
         {
             this.courseID = courseID;
-        }
-
-        public String getInstructor()
-        {
-            return instructor;
-        }
-
-        public void setInstructor(String instructor)
-        {
-            this.instructor = instructor;
         }
 
         public List<Section> getSections()
