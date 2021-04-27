@@ -3,7 +3,7 @@
 	<h1>Schedule Planner: Register User</h1>
 	<form runat="server">
 	<div class="form-box">
-		<div style="width: 50%; float: left; text-align: right">
+		<div style=float: left; text-align: left">
 			<div class="input-field">Username:  </div>
 
 			<div style="height: 30px">Password:  </div>
