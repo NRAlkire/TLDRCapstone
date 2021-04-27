@@ -4,8 +4,9 @@
 	<title>Login form</title>
 	<link rel="stylesheet" href="css/stylesheet.css">
 </head>
-	<h1>Student Schedule Planner: Ultimate Edition</h1>
+<h1>Student Schedule Planner: Ultimate Edition</h1>
 <body>
+
 <div>
 	<form class="form-box" runat="server">
 		<div style="text-align: center;">
