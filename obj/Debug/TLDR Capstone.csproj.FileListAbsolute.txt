@@ -383,3 +383,11 @@ C:\Users\mja50\Source\Repos\TLDR-Capstone\bin\EntityFramework.xml
 C:\Users\mja50\Source\Repos\TLDR-Capstone\bin\EntityFramework.SqlServer.xml
 C:\Users\mja50\Source\Repos\TLDR-Capstone\bin\Microsoft.Configuration.ConfigurationBuilders.Base.xml
 C:\Users\mja50\Source\Repos\TLDR-Capstone\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml
+D:\Capstone Project\New folder\TLDR-Capstone\bin\EntityFramework.dll
+D:\Capstone Project\New folder\TLDR-Capstone\bin\EntityFramework.SqlServer.dll
+D:\Capstone Project\New folder\TLDR-Capstone\bin\Microsoft.Configuration.ConfigurationBuilders.Base.dll
+D:\Capstone Project\New folder\TLDR-Capstone\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll
+D:\Capstone Project\New folder\TLDR-Capstone\bin\EntityFramework.xml
+D:\Capstone Project\New folder\TLDR-Capstone\bin\EntityFramework.SqlServer.xml
+D:\Capstone Project\New folder\TLDR-Capstone\bin\Microsoft.Configuration.ConfigurationBuilders.Base.xml
+D:\Capstone Project\New folder\TLDR-Capstone\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml

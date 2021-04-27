@@ -119,7 +119,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
+    <Content Include="Dashboard.aspx" />
     <Content Include="App_Data\ProjectDB.mdf" />
     <Content Include="App_Data\ProjectDB_log.ldf">
       <DependentUpon>ProjectDB.mdf</DependentUpon>
@@ -143,16 +143,16 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="css\account-verification.html" />
-    <Content Include="css\admin-dashboard.html" />
-    <Content Include="css\course_catalog.html" />
+    <Content Include="account-verification.html" />
+    <Content Include="admin-dashboard.html" />
+    <Content Include="course_catalog.html" />
     <Content Include="css\interior-stylesheet.css" />
     <Content Include="css\main-stylesheet.css" />
     <Content Include="css\stylesheet.css" />
-    <Content Include="css\login.html" />
-    <Content Include="css\registration.html" />
-    <Content Include="css\root-dashboard.html" />
-    <Content Include="css\student-dashboard.html" />
+    <Content Include="login.html" />
+    <Content Include="registration.html" />
+    <Content Include="root-dashboard.html" />
+    <Content Include="student-dashboard.html" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -191,12 +191,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Classes\Catalog.cs" />
