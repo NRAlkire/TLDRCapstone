@@ -24,6 +24,15 @@ namespace TLDR_Capstone
 		protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
 		/// <summary>
+		/// userandlvl control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label userandlvl;
+
+		/// <summary>
 		/// catalogGridview control.
 		/// </summary>
 		/// <remarks>

@@ -11,6 +11,10 @@
 		<div style="text-align: center">
 			<h2>Course Catalog</h2>
 		</div>
+		<div>
+			<h4>
+				<asp:Label ID="userandlvl" runat="server" Text="Label"></asp:Label></h4>
+		</div>
 		<div style="text-align: center">
 			<asp:GridView ID="catalogGridview" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="catalogGridview_SelectedIndexChanged">
 				<Columns>
