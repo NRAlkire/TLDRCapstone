@@ -375,3 +375,11 @@ C:\Brad School\Spring 2021\Capstone Project\TLDR Capstone\bin\EntityFramework.xm
 C:\Brad School\Spring 2021\Capstone Project\TLDR Capstone\bin\EntityFramework.SqlServer.xml
 C:\Brad School\Spring 2021\Capstone Project\TLDR Capstone\bin\Microsoft.Configuration.ConfigurationBuilders.Base.xml
 C:\Brad School\Spring 2021\Capstone Project\TLDR Capstone\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml
+C:\Users\mja50\Source\Repos\TLDR-Capstone\bin\EntityFramework.dll
+C:\Users\mja50\Source\Repos\TLDR-Capstone\bin\EntityFramework.SqlServer.dll
+C:\Users\mja50\Source\Repos\TLDR-Capstone\bin\Microsoft.Configuration.ConfigurationBuilders.Base.dll
+C:\Users\mja50\Source\Repos\TLDR-Capstone\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll
+C:\Users\mja50\Source\Repos\TLDR-Capstone\bin\EntityFramework.xml
+C:\Users\mja50\Source\Repos\TLDR-Capstone\bin\EntityFramework.SqlServer.xml
+C:\Users\mja50\Source\Repos\TLDR-Capstone\bin\Microsoft.Configuration.ConfigurationBuilders.Base.xml
+C:\Users\mja50\Source\Repos\TLDR-Capstone\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml

@@ -20,7 +20,7 @@ namespace TLDR_Capstone
 
 		protected void regBtn_Click1(object sender, EventArgs e)
 		{
-			string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+			string constr = ConfigurationManager.ConnectionStrings["capstoneDatabase"].ConnectionString;
 
 			SqlConnection conn = new SqlConnection(constr);
 
@@ -34,12 +34,24 @@ namespace TLDR_Capstone
 				conn.Open();
 				if (command.ExecuteScalar() == null)
 				{
+					
 					string to = emailTB.Text; //To address    
 					string from = "scheduleplannerdonotreply@gmail.com"; //From address   
-					MailMessage message = new MailMessage(from, to);  
+					MailMessage message = new MailMessage(from, to);
 
-					//Body of message
-					string mailbody = "Please enter your email at /*insert link*/ to verify your account.";
+					String mailbody = "";
+					//Student request
+					if (accessLvlDD.SelectedIndex == 0)
+					{
+						//Body of message
+						mailbody = "Please enter your email at /*insert link*/ to verify your account.";
+					}
+					//Admin or Root request
+					else
+                    {
+						mailbody = "You will receive an email when your account has been reviewed by a root user.";
+                    }
+
 					//Subject of message
 					message.Subject = "Registration Verification";  
 					message.Body = mailbody;  
@@ -61,12 +73,14 @@ namespace TLDR_Capstone
 						throw ex;  
 					}  ;
 
-					//store false Boolean value database
-					//put following line into code below once sql tables are updated
-					//("insert into Users (verified) " + "Values('" + isVerified + "')", conn)
 					conn.Close();
-					command = new SqlCommand("insert into Users (username, password, authlevel, email) " +
-						"VALUES('" + userTB.Text + "', '" + passTB.Text + "', '" + accessLvlDD.SelectedIndex + "', '" + emailTB.Text + "')", conn);
+					command = new SqlCommand("INSERT INTO Users (username, password, authlevel, email) " +
+						"VALUES(@username, @password, @authlevel, @email)", conn);
+
+					command.Parameters.AddWithValue("@username", userTB.Text);
+					command.Parameters.AddWithValue("@password", passTB.Text);
+					command.Parameters.AddWithValue("@authlevel", accessLvlDD.SelectedIndex);
+					command.Parameters.AddWithValue("@email", emailTB.Text);
 
 					debug.Text = userTB.Text + passTB.Text + accessLvlDD.SelectedIndex + emailTB.Text;
 
