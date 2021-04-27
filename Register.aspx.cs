@@ -20,7 +20,7 @@ namespace TLDR_Capstone
 
 		protected void regBtn_Click1(object sender, EventArgs e)
 		{
-			string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+			string constr = ConfigurationManager.ConnectionStrings["capstoneDatabase"].ConnectionString;
 
 			SqlConnection conn = new SqlConnection(constr);
 

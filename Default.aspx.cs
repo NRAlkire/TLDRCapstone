@@ -16,7 +16,7 @@ namespace TLDR_Capstone
 
 		protected void Login_Authenticate(object sender, AuthenticateEventArgs e)
 		{
-            string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+            string constr = ConfigurationManager.ConnectionStrings["capstoneDatabase"].ConnectionString;
 			
 			SqlConnection conn = new SqlConnection(constr);
 			SqlCommand command = new SqlCommand("select password from Users where username = '" + Login.UserName + "'");
@@ -26,7 +26,9 @@ namespace TLDR_Capstone
 			string value = (string)command.ExecuteScalar();
 			conn.Close();
 
-			if (value.Trim().Equals(Login.Password))
+			if (value == null) Login.FailureText = "User not found";
+
+			else if (value.Trim().Equals(Login.Password))
 			{
 				e.Authenticated = true;
 				Student student = new Student();
@@ -40,6 +42,7 @@ namespace TLDR_Capstone
 				conn.Close();
 
 				Session["Student"] = student;
+
 				Response.Redirect("~/html_css/student-dashboard.html");
 
 			}
