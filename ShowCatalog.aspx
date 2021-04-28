@@ -2,8 +2,9 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
+	<link rel="stylesheet" href="css/interior-stylesheet.css">
 	<title>Catalog</title>
 </head>
 <body>
@@ -16,7 +17,10 @@
 				<asp:Label ID="userandlvl" runat="server" Text="Label"></asp:Label></h4>
 		</div>
 		<div style="text-align: center">
-			<asp:GridView ID="catalogGridview" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+			<asp:GridView ID="catalogGridview" runat="server" AutoGenerateColumns="False" width="100%" DataSourceID="SqlDataSource1">
+			<HeaderStyle CssClass="HeaderStyle" />
+             <RowStyle CssClass="RowStyle" />
+             <AlternatingRowStyle CssClass="AlternatingRowStyle" />
 				<Columns>
 					<asp:TemplateField>
 						<ItemTemplate>
@@ -32,11 +36,11 @@
 		<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:capstoneDatabase%>" SelectCommand="SELECT DISTINCT [deptID], [courseNumber], [courseTitle] FROM [Schedule]"></asp:SqlDataSource>
 
 		<div>
-			<asp:Button ID="selectBtn" runat="server" Text="Select" OnClick="selectBtn_Click" />
+			<asp:Button class="submit-btn" ID="selectBtn" runat="server" Text="Select" OnClick="selectBtn_Click" /><br />
 		</div>
 		<div>
 			<h4>
-				<asp:Label ID="selected" runat="server" Text="Selected Courses"></asp:Label></h4>
+				<asp:Label ID="selected" runat="server" Text="Selected Courses"></asp:Label></h4><br />
 		</div>
 	</form>
 </body>
