@@ -7,7 +7,7 @@
 	<div class="form-box">
 			<div style="text-align: center;">Registration Form</div>
 		<br />
-			<div>Username:  <asp:TextBox runat="server" class="input-field" ID="userTB" runat="server" Height="20px"></asp:TextBox></div>
+			<div>Username:  <asp:TextBox runat="server" class="input-field" ID="userTB" Height="20px"></asp:TextBox></div>
 			<div>Password:  <asp:TextBox ID="passTB" class="input-field" runat="server" Height="20px" TextMode="Password"></asp:TextBox></div>
 			<div>Confirm Password:  <asp:TextBox ID="passConfTB" class="input-field" runat="server" Height="20px" TextMode="Password"></asp:TextBox></div>
 			<div>Email:  <asp:TextBox ID="emailTB" class="input-field" runat="server" Height="20px"></asp:TextBox></div>

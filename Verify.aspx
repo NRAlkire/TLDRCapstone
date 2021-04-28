@@ -10,9 +10,10 @@
 		<div class="form-box">
 			<br><br>
 			</div>
-		    	<form id="Enter 4-Digit Code" class="input-group">
-		    		<input type="text" class="input-field" placeholder="4-Digit Code" required>
-		    		<button type="submit" class="verify-btn">Verify Account</button><br>
+		    	<form id="Verify" class="input-group" runat="server">
+					<div>Email:  <asp:TextBox runat="server" class="input-field" ID="emailVerTB" Height="20px"></asp:TextBox></div>
+					<asp:Button ID="verBtn" class="submit-btn" runat="server" Text="Verify Email" OnClick="verBtn_Click1" /><br>
+					<asp:Label ID="debug" runat="server" Text="debug"></asp:Label>
 		    	</form>
 		</div>
 	
