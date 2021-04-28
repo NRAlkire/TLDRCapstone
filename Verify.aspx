@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Verify Email" Language="C#" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="TLDR_Capstone.Contact" %>
+﻿<%@ Page Title="Verify Email" Language="C#" AutoEventWireup="true" CodeBehind="Verify.aspx.cs" Inherits="TLDR_Capstone.Contact" %>
 
 
 <html><head>
