@@ -1,0 +1,20 @@
+﻿<%@ Page Title="Verify Email" Language="C#" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="TLDR_Capstone.Contact" %>
+
+
+<html><head>
+<title>Verify Account</title>
+	<link rel="stylesheet" href="css/main-stylesheet.css">
+</head>
+<body>
+	<div class="Main">
+		<div class="form-box">
+			<br><br>
+			</div>
+		    	<form id="Enter 4-Digit Code" class="input-group">
+		    		<input type="text" class="input-field" placeholder="4-Digit Code" required>
+		    		<button type="submit" class="verify-btn">Verify Account</button><br>
+		    	</form>
+		</div>
+	
+</body>
+</html>
