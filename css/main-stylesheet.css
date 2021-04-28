@@ -24,7 +24,7 @@ body{
 	width:85%;
 	height: 75%;
 	position: relative;
-	margin: 6% auto;
+	margin: 2% auto;
 	background: #fff;
 	padding: 5px;
 }
@@ -94,75 +94,6 @@ body{
 	padding: 5px;
 	position: absolute; 
 }
-.wrapper{
-  height: 60px;
-  width: 1000px;
-  background: #fff;
-  margin: auto;
-  line-height: 60px;
-  border-radius: 50px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.25);
-}
-.wrapper nav{
-  position: relative;
-  display: flex;
-  background: #262626;
-  border-radius: 50px;
-   
-}
-.wrapper nav label{
-  flex: 1;
-  width: 100%;
-  z-index: 1;
-  cursor: pointer;
-}
-.wrapper nav label a{
-  position: relative;
-  z-index: -1;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: color 0.6s ease;
-  text-transform: uppercase;
-}
-.wrapper nav #course-catalog:checked ~ label.course-catalog a,
-.wrapper nav #available-courses:checked ~ label.available-courses a,
-.wrapper nav #my-schedule:checked ~ label.my-schedule a,
-.wrapper nav #saved-schedules:checked ~ label.saved-schedules a,
-.wrapper nav #reserved-times:checked ~ label.reserved-times a{
-  color: #fff;
-}
-.wrapper nav label a i{
-  font-size: 25px;
-  margin: 0 7px;
-}
-.wrapper nav .tab{
-  position: absolute;
-  height: 100%;
-  width: 20%;
-  left: 0;
-  bottom: 0;
-  z-index: 0;
-  border-radius: 50px;
-  background: linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
-  transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-.wrapper nav #available-courses:checked ~ .tab{
-  left: 20%;
-}
-.wrapper nav #my-schedule:checked ~ .tab{
-  left: 40%;
-}
-.wrapper nav #saved-schedules:checked ~ .tab{
-  left: 60%;
-}
-.wrapper nav #reserved-times:checked ~ .tab{
-  left: 80%;
-}
-.wrapper nav input{
-  display: none;
-}
 .footer {
   position:fixed;
   bottom:0;
@@ -218,13 +149,11 @@ li {
 
 .menu-btn {
 	width: 100%;
-	padding: 10px 30px;
+	padding: 5px 20px;
 	cursor: pointer;
 	display: block;
 	color: white;
-	margin-top: 20px;
-	margin-left: 20px;
-	margin-right: 20px;
+	margin: auto;
 	background: linear-gradient(to bottom, #2B4161 0%, #000000 100%);
 	border: 0;
 	outline: none;
