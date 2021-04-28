@@ -4,15 +4,15 @@
 	<form runat="server">
 	<div class="form-box">
 		<div style=float: left; text-align: left">
-			<div class="input-field">Username:  </div>
+			<div>Username:  </div>
 
-			<div style="height: 30px">Password:  </div>
+			<div>Password:  </div>
 
-			<div style="height: 30px">Confirm Password:  </div>
+			<div>Confirm Password:  </div>
 
-			<div style="height: 30px">Email:  </div>
+			<div>Email:  </div>
 
-			<div style="height: 30px">Access Level Requested:  </div>
+			<div>Access Level Requested:  </div>
 		</div>
 		<div style="width: 50%; float: right">
 			
