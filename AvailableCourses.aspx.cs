@@ -61,8 +61,14 @@ namespace TLDR_Capstone
 
 			selectedcourses.Text = "";
 
-			foreach (Course courses in student.selectedCourses)
-				selectedcourses.Text += courses.getName() + "<br/>";
+			foreach (Section section in student.selectedCourses[0].getSections())
+			{
+				selectedcourses.Text += "title " + section.getCourseTitle() + "<br/>";
+				selectedcourses.Text += "instructor " + section.getInstructor() + "<br/>";
+				selectedcourses.Text += "meetdays " + section.getMeetDays() + "<br/>";
+				selectedcourses.Text += "begin " + section.getBeginTime() + "<br/>";
+				selectedcourses.Text += "end " + section.getEndTime() + "<br/>";
+			}
 		}
 	}
 }

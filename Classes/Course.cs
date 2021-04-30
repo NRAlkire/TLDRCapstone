@@ -69,6 +69,11 @@ namespace TLDR_Capstone.Classes
             return sections;
         }
 
+        public Section getSection(int i)
+        {
+            return sections[i];
+        }
+
         public void setSections(List<Section> sections)
         {
             this.sections = sections;
