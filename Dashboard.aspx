@@ -11,8 +11,8 @@
         </div>
     <div class="button-box">
 	<ul>
-		<li><button class="menu-btn"><a href ="../ShowCatalog.aspx" target="window">Course Catalog</button></a></li>
-		<li><button class="menu-btn"><a href ="https://few.io/" target="window">Available Courses</button></a></li>
+		<li><button class="menu-btn"><a href ="ShowCatalog.aspx" target="window">Course Catalog</button></a></li>
+		<li><button class="menu-btn"><a href ="AvailableCourses.aspx" target="window">Available Courses</button></a></li>
 		<li><button class="menu-btn"><a href ="https://few.io/" target="window">My Schedules</button></a></li>
 		<li><button class="menu-btn"><a href ="https://few.io/" target="window">Reserved Times</button></a></li>
 		<li><button class="menu-btn"><a href ="https://few.io/" target="window">Registration Queues</button></a></li>
@@ -20,7 +20,7 @@
     </div>
     <div class="Main">
         <div class="main-box">
-            <iframe width="100%" height="100%" name="window" src="../ShowCatalog.aspx"></iframe>
+            <iframe width="100%" height="100%" name="window" src="ShowCatalog.aspx"></iframe>
         </div>
     </div>
     <div class="footer">

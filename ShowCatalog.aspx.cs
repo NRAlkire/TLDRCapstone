@@ -20,7 +20,7 @@ namespace TLDR_Capstone
 			Student student = Session["Student"] as Student;
 			string authlevel = null;
 
-			if (student == null) ;
+			if (student == null) userandlvl.Text = "Unknown user";
 			else if (student.getAuthLvl() == 0) authlevel = "Student";
 			else if (student.getAuthLvl() == 1) authlevel = "Administrator";
 			else if (student.getAuthLvl() == 2) authlevel = "Root User";
@@ -64,7 +64,7 @@ namespace TLDR_Capstone
 			foreach (string course in coursesList)
 			{
 				myCourse = null;
-				SqlCommand command = new SqlCommand("SELECT * FROM Schedule WHERE courseTitle = '" + course + "'");
+				SqlCommand command = new SqlCommand("SELECT * FROM Schedule WHERE courseTitle = '" + HttpUtility.HtmlDecode(course) + "'");
 				command.Connection = conn;
 
 				DataTable dataTable = new DataTable();
@@ -87,13 +87,13 @@ namespace TLDR_Capstone
 					//String pDeptID, int pCourseNumber, String pCourseTitle, String pSection, String pInstructor, int pBeginTime, int pEndTime, string pMeetDays
 					myCourse.addSection(mySection);
 				}
-				student.addSelectedCourse(myCourse);
+				student.addPotentialCourse(myCourse);
 			}
 
 			//test to see if it worked
-			for (int i = 0; i < student.selectedCourses.Count(); i++)
+			for (int i = 0; i < student.potentialCourses.Count(); i++)
 			{
-				selected.Text += student.selectedCourses[i].getName() + "<br/>";
+				selected.Text += student.potentialCourses[i].getName() + "<br/>";
 			}
 
 			Session["Student"] = student;
