@@ -58,6 +58,11 @@ namespace TLDR_Capstone
             selectedCourses.Add(pCourse);
         }
 
+        public Course getSelectedCourse(int i)
+        {
+            return selectedCourses[i];
+        }
+
         public void addReservedTime(ReservedTime reserved)
         {
             reservedTimes.Add(reserved);
@@ -90,10 +95,10 @@ namespace TLDR_Capstone
                     || (pSections[i].getBMeetDays()[3] && pSections[j].getBMeetDays()[3])     //Thursday
                     || (pSections[i].getBMeetDays()[4] && pSections[j].getBMeetDays()[4]))
                     {  //Friday
-                        if (((pSections[i].getBeginTime() > pSections[j].getBeginTime()) &&
-                            (pSections[i].getBeginTime() < pSections[j].getEndTime())) ||
-                            ((pSections[i].getEndTime() > pSections[j].getBeginTime()) &&
-                                (pSections[i].getEndTime() < pSections[j].getEndTime())))
+                        if (((pSections[i].getBeginTime() >= pSections[j].getBeginTime()) &&
+                            (pSections[i].getBeginTime() <= pSections[j].getEndTime())) ||
+                            ((pSections[i].getEndTime() >= pSections[j].getBeginTime()) &&
+                                (pSections[i].getEndTime() <= pSections[j].getEndTime())))
                         {
                             hasOverlap = true;
                         }
@@ -103,83 +108,88 @@ namespace TLDR_Capstone
             return hasOverlap;
         }
 
-        public List<List<Section>> generateValidSchedules(List<Course> pCourses)
+        public void generateValidSchedules()
         {
-            //Initialize return value
-            List<List<Section>> validSchedules = new List<List<Section>>();
-
             //Temporary variable to store schedule being evaluated
-            List<Section> beingEvaluated = new List<Section>();
+            List<Section> beingEvaluated = null;
 
             //Here we switch on the number of courses selected
-            switch (pCourses.Count())
+            switch (selectedCourses.Count())
             {
                 //2 Courses
                 case 2:
-                    for (int i = 0; i < pCourses[0].getSections().Count(); i++)
+                    Course course0 = getSelectedCourse(0);
+                    Course course1 = getSelectedCourse(1);
+                    for (int i = 0; i < course0.getSections().Count(); i++)
                     {
-                        for (int j = 0; j < pCourses[1].getSections().Count(); j++)
+                        for (int j = 0; j < course1.getSections().Count(); j++)
                         {
-                            beingEvaluated.Add(pCourses[0].getSections()[i]);
-                            beingEvaluated.Add(pCourses[1].getSections()[j]);
+                            beingEvaluated = new List<Section>();
+                            beingEvaluated.Add(course0.sections[i]);
+                            beingEvaluated.Add(course1.sections[j]);
                             if (!hasOverlap(beingEvaluated))
                             {
-                                validSchedules.Add(beingEvaluated);
+                                allValidSchedules.Add(beingEvaluated);
                             }
-                            beingEvaluated.Clear();
+                            
                         }
                     }
                     break;
                 //3 Courses
                 case 3:
-                    for (int i = 0; i < pCourses[0].getSections().Count(); i++)
+                    course0 = getSelectedCourse(0);
+                    course1 = getSelectedCourse(1);
+                    Course course2 = getSelectedCourse(2);
+                    for (int i = 0; i < course0.getSections().Count(); i++)
                     {
-                        for (int j = 0; j < pCourses[1].getSections().Count(); j++)
+                        for (int j = 0; j < course1.getSections().Count(); j++)
                         {
-                            for (int k = 0; k < pCourses[2].getSections().Count(); k++)
-                            {
-                                beingEvaluated.Add(pCourses[0].getSections()[i]);
-                                beingEvaluated.Add(pCourses[1].getSections()[j]);
-                                beingEvaluated.Add(pCourses[2].getSections()[k]);
+                            for (int k = 0; k < course2.getSections().Count(); k++)
+                                {
+                                beingEvaluated = new List<Section>();
+                                beingEvaluated.Add(course0.sections[i]);
+                                beingEvaluated.Add(course1.sections[j]);
+                                beingEvaluated.Add(course2.sections[k]);
                                 if (!hasOverlap(beingEvaluated))
                                 {
-                                    validSchedules.Add(beingEvaluated);
+                                    allValidSchedules.Add(beingEvaluated);
                                 }
-                                beingEvaluated.Clear();
                             }
                         }
                     }
                     break;
                 //4 Courses
                 case 4:
-                    for (int i = 0; i < pCourses[0].getSections().Count(); i++)
+                    course0 = getSelectedCourse(0);
+                    course1 = getSelectedCourse(1);
+                    course2 = getSelectedCourse(2);
+                    Course course3 = getSelectedCourse(3);
+                    for (int i = 0; i < course0.getSections().Count(); i++)
                     {
-                        for (int j = 0; j < pCourses[1].getSections().Count(); j++)
+                        for (int j = 0; j < course1.getSections().Count(); j++)
                         {
-                            for (int k = 0; k < pCourses[2].getSections().Count(); k++)
-                            {
-                                for (int l = 0; l < pCourses[3].getSections().Count(); l++)
+                            for (int k = 0; k < course2.getSections().Count(); k++)
                                 {
-                                    beingEvaluated.Add(pCourses[0].getSections()[i]);
-                                    beingEvaluated.Add(pCourses[1].getSections()[j]);
-                                    beingEvaluated.Add(pCourses[2].getSections()[k]);
-                                    beingEvaluated.Add(pCourses[3].getSections()[l]);
+                                for (int l = 0; l < course3.getSections().Count(); l++)
+                                {
+                                    beingEvaluated = new List<Section>();
+                                    beingEvaluated.Add(course0.sections[i]);
+                                    beingEvaluated.Add(course1.sections[j]);
+                                    beingEvaluated.Add(course2.sections[k]);
+                                    beingEvaluated.Add(course3.sections[l]);
                                     if (!hasOverlap(beingEvaluated))
                                     {
-                                        validSchedules.Add(beingEvaluated);
+                                        allValidSchedules.Add(beingEvaluated);
                                     }
-                                    beingEvaluated.Clear();
                                 }
                             }
                         }
                     }
                     break;
                 default:
-                    beingEvaluated.Clear();
+           
                     break;
             }
-
-            return validSchedules;
         }
         /*public List<Boolean> convDays2Bool(String pDays)
         {
