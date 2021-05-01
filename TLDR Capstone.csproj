@@ -150,6 +150,7 @@
     <Content Include="css\stylesheet.css" />
     <Content Include="login.html" />
     <Content Include="registration.html" />
+    <Content Include="ReservedTimes.aspx" />
     <Content Include="root-dashboard.html" />
     <Content Include="student-dashboard.html" />
     <Content Include="Register.aspx" />
@@ -219,6 +220,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReservedTimes.aspx.cs">
+      <DependentUpon>ReservedTimes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReservedTimes.aspx.designer.cs">
+      <DependentUpon>ReservedTimes.aspx</DependentUpon>
     </Compile>
     <Compile Include="ShowCatalog.aspx.cs">
       <DependentUpon>ShowCatalog.aspx</DependentUpon>

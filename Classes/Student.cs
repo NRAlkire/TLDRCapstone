@@ -15,6 +15,7 @@ namespace TLDR_Capstone
             selectedCourses = new List<Course>();
             validSchedule = new List<Course>();
             allValidSchedules = new List<List<Section>>();
+            reservedTimes = new List<ReservedTime>();
             username = "default";
             authLvl = 0;
         }
@@ -22,6 +23,7 @@ namespace TLDR_Capstone
         //Members
         public List<Course> potentialCourses, selectedCourses, validSchedule;
         public List<List<Section>> allValidSchedules;
+        public List<ReservedTime> reservedTimes;
         public string username;
         public int authLvl;
 
@@ -54,6 +56,11 @@ namespace TLDR_Capstone
         public void addSelectedCourse(Course pCourse)
         {
             selectedCourses.Add(pCourse);
+        }
+
+        public void addReservedTime(ReservedTime reserved)
+        {
+            reservedTimes.Add(reserved);
         }
 
         //Function to determine if a combination of course sections has any scheduling overlaps
@@ -203,5 +210,48 @@ namespace TLDR_Capstone
 
             return MeetDays;
         }*/
+    }
+
+    public struct ReservedTime
+    {
+        private String day;
+        private int beginTime, endTime;
+
+        public ReservedTime(String pDay, int pBeginTime, int pEndTime)
+        {
+            day = pDay;
+            beginTime = pBeginTime;
+            endTime = pEndTime;
+        }
+
+        public String getDay()
+        {
+            return day;
+        }
+
+        public void setDay(String pDay)
+        {
+            day = pDay;
+        }
+
+        public int getBeginTime()
+        {
+            return beginTime;
+        }
+
+        public void setBeginTime(int pBeginTime)
+        {
+            beginTime = pBeginTime;
+        }
+
+        public int getEndTime()
+        {
+            return endTime;
+        }
+
+        public void setEndTime(int pEndTime)
+        {
+            endTime = pEndTime;
+        }
     }
 }
