@@ -63,6 +63,11 @@ namespace TLDR_Capstone
             return selectedCourses[i];
         }
 
+        public List<ReservedTime> getReservedTimes()
+        {
+            return reservedTimes;
+        }
+
         public void addReservedTime(ReservedTime reserved)
         {
             reservedTimes.Add(reserved);

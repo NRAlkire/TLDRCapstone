@@ -85,7 +85,10 @@ namespace TLDR_Capstone
 						dataRow[4].ToString(), dataRow[5].ToString(),
 						int.Parse(dataRow[7].ToString()), int.Parse(dataRow[8].ToString()), dataRow[6].ToString());
 					//String pDeptID, int pCourseNumber, String pCourseTitle, String pSection, String pInstructor, int pBeginTime, int pEndTime, string pMeetDays
-					myCourse.addSection(mySection);
+					if (!(mySection.reservedOverlap(student.getReservedTimes())))
+					{
+						myCourse.addSection(mySection);
+					}
 				}
 				student.addPotentialCourse(myCourse);
 			}
