@@ -162,5 +162,23 @@ namespace TLDR_Capstone.Classes
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+        public Boolean reservedOverlap(List<ReservedTime> reservedTimes)
+        {
+            foreach (ReservedTime reserve in reservedTimes)
+            {
+                //if the section has meeting on the day of the reserved time, and
+                //if the meeting occurs during the reserved time, return true
+                if (getMeetDays().Contains(reserve.getDay())
+                    && ((reserve.getBeginTime() < getBeginTime() && reserve.getEndTime() > getBeginTime())
+                    || (reserve.getBeginTime() < getEndTime() && reserve.getEndTime() > getEndTime())))
+                {
+                    return true;
+                }
+            }
+
+            //else, no overlap
+            return false;
+        }
     }
 }
