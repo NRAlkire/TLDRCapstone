@@ -72,7 +72,8 @@ namespace TLDR_Capstone
 			//test to see if it worked
 			foreach (ReservedTime reserved in student.reservedTimes)
             {
-				selected.Text += reserved.getDay() + "<br/>";
+				selected.Text += reserved.getDay() + " " + reserved.getBeginTime().ToString() + 
+					"-" + reserved.getEndTime().ToString() +  "<br/>";
 			}
 
 			Session["Student"] = student;
