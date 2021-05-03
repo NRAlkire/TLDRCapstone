@@ -1,4 +1,4 @@
-*{
+* {
 	margin: 0px;
 	padding: 0px;
 	font-family: sans-serif;
@@ -6,12 +6,16 @@
 body {
 	background-color: slategrey;
 }
+h1 {
+	font-size: 30px;
+	font-weight: 400;
+	padding: 10px 20px;
+}
 .GridViewStyle {
 	border: 1px solid #ddd;
 	border-collapse: collapse;
 	font-family: Arial, sans-serif;
 	table-layout: auto;
-	font-size: 14px;
 }
 .HeaderStyle {
 	border: 1px, solid, #ddd;
@@ -24,10 +28,12 @@ body {
 }
 tr.RowStyle {
 	text-align: center;
+
 	background-color: #ffffff;
 }
 tr.AlternatingRowStyle {
 	text-align: center;
+
 	background-color: #78FFF2;
 }
 tr.RowStyle:hover {

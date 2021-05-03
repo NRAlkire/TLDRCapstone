@@ -10,7 +10,7 @@
 <body>
 	<form id="form1" runat="server">
 		<div style="text-align: center">
-			<h2>Course Catalog</h2>
+			<h1>Course Catalog</h1>
 		</div>
 		<div>
 			<h4>

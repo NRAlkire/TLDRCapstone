@@ -14,7 +14,7 @@
 		<li><button class="menu-btn"><a href ="ShowCatalog.aspx" target="window">Course Catalog</button></a></li>
 		<li><button class="menu-btn"><a href ="AvailableCourses.aspx" target="window">Available Courses</button></a></li>
 		<li><button class="menu-btn"><a href ="Schedules.aspx" target="window">My Schedules</button></a></li>
-		<li><button class="menu-btn"><a href ="https://few.io/" target="window">Reserved Times</button></a></li>
+		<li><button class="menu-btn"><a href ="ReservedTimes.aspx" target="window">Reserved Times</button></a></li>
 		<li><button class="menu-btn"><a href ="https://few.io/" target="window">Registration Queues</button></a></li>
 		</ul>
     </div>

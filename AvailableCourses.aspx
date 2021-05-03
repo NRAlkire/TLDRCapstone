@@ -5,11 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Available Courses</title>
+    <link rel="stylesheet" href="css/interior-stylesheet.css"/>
 </head>
 <body>
     <form id="form1" runat="server">
         <div style="text-align: center">
-            <h2>Available Courses</h2>
+            <h1>Available Courses</h1>
         </div>
         <div>
 			<asp:GridView ID="availableCoursesGV" runat="server" AutoGenerateColumns="False">
@@ -24,7 +25,7 @@
 			</asp:GridView>
         </div>
         <div>
-			<asp:Button ID="select" runat="server" Text="Select" OnClick="select_Click" />
+			<asp:Button ID="select" class="submit-btn" runat="server" Text="Select" OnClick="select_Click" />
         </div>
         <div>
 			<asp:Label ID="selectedcourses" runat="server" Text="Label"></asp:Label>
