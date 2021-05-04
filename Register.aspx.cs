@@ -34,17 +34,16 @@ namespace TLDR_Capstone
 				conn.Open();
 				if (command.ExecuteScalar() == null)
 				{
-					
-					
-
 					conn.Close();
-					command = new SqlCommand("INSERT INTO Users (username, password, authlevel, email) " +
-						"VALUES(@username, @password, @authlevel, @email)", conn);
+					command = new SqlCommand("INSERT INTO Users (username, password, authlevel, email, verified, authorized) " +
+						"VALUES(@username, @password, @authlevel, @email, @verified, @authorized)", conn);
 
 					command.Parameters.AddWithValue("@username", userTB.Text);
 					command.Parameters.AddWithValue("@password", passTB.Text);
 					command.Parameters.AddWithValue("@authlevel", accessLvlDD.SelectedIndex);
 					command.Parameters.AddWithValue("@email", emailTB.Text);
+					command.Parameters.AddWithValue("@verified", 0);
+					command.Parameters.AddWithValue("@authorized", 0);
 
 					debug.Text = userTB.Text + passTB.Text + accessLvlDD.SelectedIndex + emailTB.Text;
 
@@ -53,32 +52,22 @@ namespace TLDR_Capstone
 					debug.Text = "User successfully added.";
 					conn.Close();
 
-					command = new SqlCommand("INSERT INTO Registration (registrationColumnID, verified) " 
+					/*command = new SqlCommand("INSERT INTO Registration (registrationColumnID, verified) " 
 						+ "VALUES(@registrationColumnID, @verified)", conn);
 
 					command.Parameters.AddWithValue("@registrationColumnID", userTB.Text);
 					command.Parameters.AddWithValue("@verified", false);
 
 					conn.Open();
-					command.ExecuteNonQuery();
+					command.ExecuteNonQuery();*/
 
 					//sending the email
 					string to = emailTB.Text; //To address    
 					string from = "scheduleplannerdonotreply@gmail.com"; //From address   
 					MailMessage message = new MailMessage(from, to);
 
-					String mailbody = "";
-					//Student request
-					if (accessLvlDD.SelectedIndex == 0)
-					{
-						//Body of message
-						mailbody = "Please enter your email at /*insert link*/ to verify your account.";
-					}
-					//Admin or Root request
-					else
-					{
-						mailbody = "You will receive an email when your account has been reviewed by a root user.";
-					}
+					//Body of message
+					String mailbody = "Please enter your email at /*insert link*/ to verify your account.";
 
 					//Subject of message
 					message.Subject = "Registration Verification";
@@ -111,6 +100,8 @@ namespace TLDR_Capstone
 			{
 				debug.Text = "Passwords do not match.";
 			}
+
+			Response.Redirect("~/Verify");
 		}
 	}
 }

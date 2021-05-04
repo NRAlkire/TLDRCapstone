@@ -31,9 +31,11 @@ namespace TLDR_Capstone
 			command.Parameters.AddWithValue("@inputEmail", inputEmail);
 
 			conn.Open();
-			//if the user exists and if the requested authlevel is student
-			if (!(command.ExecuteScalar() == null) && (int) command.ExecuteScalar() == 0)
+			//if the user exists
+			if (!(command.ExecuteScalar() == null))
 			{
+
+				int userAuthLevel = (int) command.ExecuteScalar();
 				conn.Close();
 
 				//Get the username to use as key for registration table
@@ -45,18 +47,39 @@ namespace TLDR_Capstone
 				conn.Close();
 
 				//update verified value to true
-				command = new SqlCommand("UPDATE Registration SET verified = @Verified WHERE registrationColumnID = @username", conn);
+				command = new SqlCommand("UPDATE Users SET verified = @Verified WHERE username = @username", conn);
 				command.Parameters.AddWithValue("@username", userName);
-				command.Parameters.AddWithValue("@Verified", true);
+				command.Parameters.AddWithValue("@Verified", 1);
 
 				conn.Open();
 				command.ExecuteNonQuery();
+				
+				if (userAuthLevel == 0)
+                {
+					conn.Close();
+
+					command = new SqlCommand("UPDATE Users SET authorized = @authorized WHERE username = userName", conn);
+					command.Parameters.AddWithValue("@username", userName);
+					command.Parameters.AddWithValue("@authorized", 1);
+
+					conn.Open();
+					command.ExecuteNonQuery();
+					conn.Close();
+				}
 
 				string to = inputEmail; //To address    
 				string from = "scheduleplannerdonotreply@gmail.com"; //From address   
 				MailMessage message = new MailMessage(from, to);
 
-				string mailbody = "Your email has now been verified. You may now login to the Schedule Planner.";
+				string mailbody;
+				if (userAuthLevel == 0) {
+					mailbody = "Your email has now been verified. You may now login to the Schedule Planner.";
+				}
+				else {
+					mailbody = "Your email has now been verified. A root user must review your request for credentials " +
+						"before you are able to login.";
+				}
+
 				message.Subject = "Registration Verification";
 				message.Body = mailbody;
 				message.BodyEncoding = Encoding.UTF8;
@@ -79,9 +102,11 @@ namespace TLDR_Capstone
 			}
 			else
 			{
-				debug.Text = "No username with that email address exists or requested authorization level too high.";
+				debug.Text = "No username with that email address exists.";
 			}
 			conn.Close();
+
+			Response.Redirect("~/Default");
 
 			return;
 		}
