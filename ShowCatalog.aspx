@@ -6,6 +6,11 @@
 <head runat="server">
 	<link rel="stylesheet" href="css/interior-stylesheet.css">
 	<title>Catalog</title>
+	<script type="text/javascript">
+function popAddWindow(){
+	window.open("AddCourse.aspx", "_blank", "width=400px, height=200px, alignment=center, left=400px, top=200px");
+}
+	</script>
 </head>
 <body>
 	<form id="form1" runat="server">
@@ -13,8 +18,10 @@
 			<h1>Course Catalog</h1>
 		</div>
 		<div>
-			<h4>
-				<asp:Label ID="userandlvl" runat="server" Text="Label"></asp:Label></h4>
+			<asp:Button ID="AddCourse" runat="server" Text="Add Course" OnClientClick="return popAddWindow();" />
+		</div>
+		<div>
+			<h4><asp:Label ID="userandlvl" runat="server" Text="Label"></asp:Label></h4>
 		</div>
 		<div style="text-align: center">
 			<asp:GridView ID="catalogGridview" runat="server" AutoGenerateColumns="False" width="100%" DataSourceID="SqlDataSource1">
@@ -33,7 +40,7 @@
 				</Columns>
 			</asp:GridView>
 		</div>
-		<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:capstoneDatabase%>" SelectCommand="SELECT DISTINCT [deptID], [courseNumber], [courseTitle] FROM [Schedule]"></asp:SqlDataSource>
+		<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:capstoneDatabaseConnectionString %>" SelectCommand="SELECT * FROM [Catalog]"></asp:SqlDataSource>
 
 		<div>
 			<asp:Button class="submit-btn" ID="selectBtn" runat="server" Text="Select" OnClick="selectBtn_Click" /><br />

@@ -15,6 +15,12 @@ namespace TLDR_Capstone
 {
 	public partial class ShowCatalog : System.Web.UI.Page
 	{
+
+		protected void Page_Init()
+		{
+			catalogGridview.DataBind();
+		}
+
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			Student student = Session["Student"] as Student;
@@ -37,7 +43,7 @@ namespace TLDR_Capstone
 
 			if (student == null) student = new Student();
 
-			student.selectedCourses.Clear();
+			student.potentialCourses.Clear();
 			selected.Text = "";
 			//int i = 0;
 
@@ -74,7 +80,8 @@ namespace TLDR_Capstone
 					da.Fill(dataTable);
 				}
 
-				myCourse = new Course(dataTable.Rows[0][1].ToString(), int.Parse(dataTable.Rows[0][2].ToString()),
+				myCourse = new Course(dataTable.Rows[0][1].ToString(), 
+					int.Parse(dataTable.Rows[0][2].ToString()),
 					dataTable.Rows[0][3].ToString(), null); 
 
 				//da now has all sections
@@ -94,6 +101,9 @@ namespace TLDR_Capstone
 			}
 
 			//test to see if it worked
+
+			selected.Text = "";
+
 			for (int i = 0; i < student.potentialCourses.Count(); i++)
 			{
 				selected.Text += student.potentialCourses[i].getName() + "<br/>";
