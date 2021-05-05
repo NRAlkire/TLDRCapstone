@@ -17,7 +17,15 @@ namespace TLDR_Capstone
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			Student student = Session["Student"] as Student;
+			if (student == null) student = new Student();
+
 			scheduleGridview.DataBind();
+
+			if ((student.getAuthLvl() != 1) || (student.getAuthLvl() != 2))
+			{
+				AddSection.Visible = false;
+			}
 		}
 	}
 }

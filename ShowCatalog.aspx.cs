@@ -24,6 +24,8 @@ namespace TLDR_Capstone
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			Student student = Session["Student"] as Student;
+			if (student == null) student = new Student();
+
 			string authlevel = null;
 
 			if (student == null) userandlvl.Text = "Unknown user";
@@ -35,6 +37,11 @@ namespace TLDR_Capstone
 			if (student != null) userandlvl.Text = student.getUsername() + ", " + authlevel;
 
 			catalogGridview.DataBind();
+
+			if ((student.getAuthLvl() != 1) || (student.getAuthLvl() != 2))
+			{
+				AddCourse.Visible = false;
+			}
 		}
 
 		protected void selectBtn_Click(object sender, EventArgs e)
