@@ -33,6 +33,8 @@ namespace TLDR_Capstone
 			else authlevel = "Unknown";
 
 			if (student != null) userandlvl.Text = student.getUsername() + ", " + authlevel;
+
+			catalogGridview.DataBind();
 		}
 
 		protected void selectBtn_Click(object sender, EventArgs e)

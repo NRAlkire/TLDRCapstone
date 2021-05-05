@@ -7,9 +7,10 @@
 	<link rel="stylesheet" href="css/interior-stylesheet.css">
 	<title>Catalog</title>
 	<script type="text/javascript">
-function popAddWindow(){
-	window.open("AddCourse.aspx", "_blank", "width=400px, height=200px, alignment=center, left=400px, top=200px");
-}
+		function popAddWindow()
+		{
+			window.open("AddCourse.aspx", "_blank", "width=400px, height=200px, alignment=center, left=400px, top=200px");
+		}
 	</script>
 </head>
 <body>

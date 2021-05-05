@@ -120,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddCourse.aspx" />
+    <Content Include="AddSection.aspx" />
     <Content Include="AvailableCourses.aspx" />
     <Content Include="Dashboard.aspx" />
     <Content Include="App_Data\ProjectDB.mdf" />
@@ -156,6 +157,7 @@
     <Content Include="RegistrationQueue.aspx" />
     <Content Include="ReservedTimes.aspx" />
     <Content Include="root-dashboard.html" />
+    <Content Include="ShowSections.aspx" />
     <Content Include="student-dashboard.html" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -201,6 +203,13 @@
     </Compile>
     <Compile Include="AddCourse.aspx.designer.cs">
       <DependentUpon>AddCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddSection.aspx.cs">
+      <DependentUpon>AddSection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddSection.aspx.designer.cs">
+      <DependentUpon>AddSection.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="AvailableCourses.aspx.cs">
@@ -259,6 +268,13 @@
     </Compile>
     <Compile Include="ShowCatalog.aspx.designer.cs">
       <DependentUpon>ShowCatalog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowSections.aspx.cs">
+      <DependentUpon>ShowSections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowSections.aspx.designer.cs">
+      <DependentUpon>ShowSections.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
