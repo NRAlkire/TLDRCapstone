@@ -15,7 +15,6 @@ namespace TLDR_Capstone
 {
 	public partial class ShowCatalog : System.Web.UI.Page
 	{
-
 		protected void Page_Init()
 		{
 			catalogGridview.DataBind();
@@ -36,12 +35,11 @@ namespace TLDR_Capstone
 
 			if (student != null) userandlvl.Text = student.getUsername() + ", " + authlevel;
 
-			catalogGridview.DataBind();
-
 			if ((student.getAuthLvl() != 1) || (student.getAuthLvl() != 2))
 			{
 				AddCourse.Visible = false;
 			}
+
 		}
 
 		protected void selectBtn_Click(object sender, EventArgs e)
@@ -119,6 +117,41 @@ namespace TLDR_Capstone
 			}
 
 			Session["Student"] = student;
+		}
+
+		protected void deleteBtn_Click(object sender, EventArgs e)
+		{
+			string constr = ConfigurationManager.ConnectionStrings["capstoneDatabase"].ConnectionString;
+			SqlConnection conn = new SqlConnection(constr);
+			SqlCommand command = new SqlCommand();
+
+
+			foreach (GridViewRow row in catalogGridview.Rows)
+			{
+				if (row.RowType == DataControlRowType.DataRow)
+				{
+					CheckBox chkbox = (row.Cells[0].FindControl("chkbox") as CheckBox);
+					if (chkbox.Checked)
+					{
+						command = new SqlCommand("DELETE FROM Catalog WHERE " +
+							"deptID = '" + row.Cells[1].Text.ToString()
+							+ "' AND courseNumber = '" + row.Cells[2].Text.ToString()
+							+ "' AND courseTitle = '" + HttpUtility.HtmlDecode(row.Cells[3].Text.ToString()) + "'");
+
+						command.Connection = conn;
+
+						conn.Open();
+						command.ExecuteNonQuery();
+						conn.Close();
+					}
+				}
+			}
+			catalogGridview.DataBind();
+		}
+
+		protected void refresh_Click(object sender, EventArgs e)
+		{
+			catalogGridview.DataBind();
 		}
 	}
 }

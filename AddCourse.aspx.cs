@@ -33,9 +33,7 @@ namespace TLDR_Capstone
 				conn.Open();
 				command.ExecuteNonQuery();
 				conn.Close();
-
-				
-			}
+			};
 		}
 	}
 }

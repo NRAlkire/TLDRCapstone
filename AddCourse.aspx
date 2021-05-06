@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>>
 </head>
-<body onunload="opener.location.reload();">
+<body>
     <form id="form1" runat="server">
         <div style="text-align: center">
         	<asp:Label ID="deptID" runat="server" Text="Dept ID" Width="100px"></asp:Label>

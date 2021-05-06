@@ -20,6 +20,8 @@
 		</div>
 		<div>
 			<asp:Button ID="AddCourse" runat="server" Text="Add Course" OnClientClick="return popAddWindow();" />
+			<asp:Button ID="deleteBtn" runat="server" OnClick="deleteBtn_Click" Text="Delete" />
+			<asp:Button ID="refresh" runat="server" OnClick="refresh_Click" Text="Refresh" />
 		</div>
 		<div>
 			<h4><asp:Label ID="userandlvl" runat="server" Text="Label"></asp:Label></h4>

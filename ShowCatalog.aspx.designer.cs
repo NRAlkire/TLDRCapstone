@@ -33,6 +33,24 @@ namespace TLDR_Capstone
 		protected global::System.Web.UI.WebControls.Button AddCourse;
 
 		/// <summary>
+		/// deleteBtn control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button deleteBtn;
+
+		/// <summary>
+		/// refresh control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button refresh;
+
+		/// <summary>
 		/// userandlvl control.
 		/// </summary>
 		/// <remarks>
