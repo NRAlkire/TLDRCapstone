@@ -22,9 +22,12 @@ namespace TLDR_Capstone
 			Student student = Session["Student"] as Student;
 			if (student == null) student = new Student();
 
+			//Invisible buttons
 			if ((student.getAuthLvl() != 1) || (student.getAuthLvl() != 2))
 			{
 				AddSection.Visible = false;
+				deleteBtn.Visible = false;
+				refresh.Visible = false;
 			}
 		}
 

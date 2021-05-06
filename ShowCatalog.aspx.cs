@@ -38,6 +38,8 @@ namespace TLDR_Capstone
 			if ((student.getAuthLvl() != 1) || (student.getAuthLvl() != 2))
 			{
 				AddCourse.Visible = false;
+				deleteBtn.Visible = false;
+				refresh.Visible = false;
 			}
 
 		}
