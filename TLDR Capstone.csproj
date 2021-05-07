@@ -157,6 +157,7 @@
     <Content Include="RegistrationQueue.aspx" />
     <Content Include="ReservedTimes.aspx" />
     <Content Include="root-dashboard.html" />
+    <Content Include="Schedules.aspx" />
     <Content Include="ShowSections.aspx" />
     <Content Include="student-dashboard.html" />
     <Content Include="Register.aspx" />
@@ -261,6 +262,13 @@
     </Compile>
     <Compile Include="ReservedTimes.aspx.designer.cs">
       <DependentUpon>ReservedTimes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Schedules.aspx.cs">
+      <DependentUpon>Schedules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Schedules.aspx.designer.cs">
+      <DependentUpon>Schedules.aspx</DependentUpon>
     </Compile>
     <Compile Include="ShowCatalog.aspx.cs">
       <DependentUpon>ShowCatalog.aspx</DependentUpon>

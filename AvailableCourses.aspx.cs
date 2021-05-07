@@ -59,9 +59,10 @@ namespace TLDR_Capstone
 
 			Session["Student"] = student;
 
+			//this last bit is deletable
 			selectedcourses.Text = "";
 
-			foreach (Section section in student.selectedCourses[0].getSections())
+			foreach (var section in student.selectedCourses[0].getSections())
 			{
 				selectedcourses.Text += "title " + section.getCourseTitle() + "<br/>";
 				selectedcourses.Text += "instructor " + section.getInstructor() + "<br/>";

@@ -37,9 +37,9 @@
 							<asp:CheckBox runat="server" ID="chkbox" />
 						</ItemTemplate>
 					</asp:TemplateField>
-					<asp:BoundField DataField="deptID" SortExpression="deptID" />
-					<asp:BoundField DataField="courseNumber" SortExpression="courseNumber" />
-					<asp:BoundField DataField="courseTitle" SortExpression="courseTitle" />
+					<asp:BoundField DataField="deptID" HeaderText="Dept. ID" SortExpression="deptID" />
+					<asp:BoundField DataField="courseNumber" HeaderText="Course Number" SortExpression="courseNumber" />
+					<asp:BoundField DataField="courseTitle" HeaderText="Course Title" SortExpression="courseTitle" />
 				</Columns>
 			</asp:GridView>
 		</div>

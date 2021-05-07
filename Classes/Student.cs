@@ -15,6 +15,7 @@ namespace TLDR_Capstone
             selectedCourses = new List<Course>();
             validSchedule = new List<Course>();
             allValidSchedules = new List<List<Section>>();
+            savedSchedules = new List<List<Section>>();
             reservedTimes = new List<ReservedTime>();
             username = "default";
             authLvl = 0;
@@ -22,7 +23,7 @@ namespace TLDR_Capstone
 
         //Members
         public List<Course> potentialCourses, selectedCourses, validSchedule;
-        public List<List<Section>> allValidSchedules;
+        public List<List<Section>> allValidSchedules, savedSchedules;
         public List<ReservedTime> reservedTimes;
         public string username;
         public int authLvl;

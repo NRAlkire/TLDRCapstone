@@ -24,21 +24,39 @@ namespace TLDR_Capstone
 		protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
 		/// <summary>
-		/// GenerateSchedules control.
+		/// Button1 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button GenerateSchedules;
+		protected global::System.Web.UI.WebControls.Button Button1;
 
 		/// <summary>
-		/// schedules control.
+		/// schedulesGV control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label schedules;
+		protected global::System.Web.UI.WebControls.GridView schedulesGV;
+
+		/// <summary>
+		/// saveSchedules control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button saveSchedules;
+
+		/// <summary>
+		/// savedSchedulesGV control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.GridView savedSchedulesGV;
 	}
 }

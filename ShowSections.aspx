@@ -35,14 +35,14 @@
 							<asp:CheckBox runat="server" ID="chkbox" />
 						</ItemTemplate>
 					</asp:TemplateField>
-					<asp:BoundField DataField="deptID" HeaderText="deptID" SortExpression="deptID" />
-					<asp:BoundField DataField="courseNumber" HeaderText="courseNumber" SortExpression="courseNumber" />
-					<asp:BoundField DataField="courseTitle" HeaderText="courseTitle" SortExpression="courseTitle" />
-					<asp:BoundField DataField="sectionID" HeaderText="sectionID" SortExpression="sectionID" />
-					<asp:BoundField DataField="instructor" HeaderText="instructor" SortExpression="instructor" />
-					<asp:BoundField DataField="days" HeaderText="days" SortExpression="days" />
-					<asp:BoundField DataField="startTime" HeaderText="startTime" SortExpression="startTime" />
-					<asp:BoundField DataField="endTime" HeaderText="endTime" SortExpression="endTime" />
+					<asp:BoundField DataField="deptID" HeaderText="Dept. ID" SortExpression="deptID" />
+					<asp:BoundField DataField="courseNumber" HeaderText="Course Number" SortExpression="courseNumber" />
+					<asp:BoundField DataField="courseTitle" HeaderText="Course Title" SortExpression="courseTitle" />
+					<asp:BoundField DataField="sectionID" HeaderText="Section ID" SortExpression="sectionID" />
+					<asp:BoundField DataField="instructor" HeaderText="Instructor" SortExpression="instructor" />
+					<asp:BoundField DataField="days" HeaderText="Meeting Days" SortExpression="days" />
+					<asp:BoundField DataField="startTime" HeaderText="Start Time" SortExpression="startTime" />
+					<asp:BoundField DataField="endTime" HeaderText="End Time" SortExpression="endTime" />
 				</Columns>
 			</asp:GridView>
 		</div>
