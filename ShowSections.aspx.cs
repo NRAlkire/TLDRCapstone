@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
+using TLDR_Capstone.Classes;
 
 namespace TLDR_Capstone
 {
@@ -29,6 +30,18 @@ namespace TLDR_Capstone
 				deleteBtn.Visible = false;
 				refresh.Visible = false;
 			}
+
+			foreach (GridViewRow row in scheduleGridview.Rows)
+			{
+				Section section = new Section(row.Cells[1].Text.ToString(), Int32.Parse(row.Cells[2].Text.ToString())
+							, HttpUtility.HtmlDecode(row.Cells[3].Text.ToString()), row.Cells[4].Text
+							, row.Cells[5].Text, Int32.Parse(row.Cells[7].Text.ToString())
+							, Int32.Parse(row.Cells[8].Text.ToString()), row.Cells[6].Text);
+
+				if (section.reservedOverlap(student.getReservedTimes())) {
+					row.Visible = false;
+				}
+            }
 		}
 
 		protected void deleteBtn_Click(object sender, EventArgs e)

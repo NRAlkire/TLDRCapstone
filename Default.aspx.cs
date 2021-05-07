@@ -44,7 +44,7 @@ namespace TLDR_Capstone
 
 				Session["Student"] = student;
 
-				Response.Redirect("./css/student-dashboard.html");
+				Response.Redirect("~/Dashboard");
 
 			}
 
