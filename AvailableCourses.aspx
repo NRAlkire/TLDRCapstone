@@ -12,6 +12,12 @@
         <div style="text-align: center">
             <h1>Available Courses</h1>
         </div>
+        <div style="text-align:center">
+			<asp:Label ID="Directions" runat="server"></asp:Label>
+		</div>
+		<div style="text-align:center">
+			<h4><asp:Label ID="userandlvl" runat="server" Text="Label"></asp:Label></h4>
+		</div>
         <div>
 			<asp:GridView ID="availableCoursesGV" runat="server" AutoGenerateColumns="False">
                 <Columns>
@@ -28,7 +34,7 @@
 			<asp:Button ID="select" class="submit-btn" runat="server" Text="Select" OnClick="select_Click" />
         </div>
         <div>
-			<asp:Label ID="selectedcourses" runat="server" Text="Label"></asp:Label>
+			<asp:Label ID="selectedcourses" runat="server" Text="Selected Courses:"></asp:Label>
         </div>
     </form>
 </body>

@@ -31,10 +31,11 @@
 			</asp:GridView>
         </div>
         <div>
-			<asp:Button ID="saveSchedules" class="submit-btn" runat="server" Text="Save Selected Schedules" OnClick="saveSchedules_Click"/>
+			<asp:Button ID="saveSchedules" class="submit-btn" runat="server" Text="Save Selected Schedules" OnClick="saveSchedules_Click" Visible="False"/>
         </div>
         <div style="text-align:center">
-            <h2>Saved Schedules</h2>
+            <h2>
+				<asp:Label ID="saved" runat="server" Text="Saved Schedules" Visible="False"></asp:Label></h2>
         </div>
          <div>
 			<asp:GridView ID="savedSchedulesGV" runat="server" AutoGenerateColumns="False">

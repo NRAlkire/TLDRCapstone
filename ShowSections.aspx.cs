@@ -24,11 +24,16 @@ namespace TLDR_Capstone
 			if (student == null) student = new Student();
 
 			//Invisible buttons
+			AdminDirections.Text = "<b>Admin and Root Users:</b> Please use the 'Add Section' button to add sections to the section view. <br/>" +
+				"Once you have clicked the button in the popup window, please click 'Refresh' to view your additions. <br/>" +
+				"To delete a section, simply check the checkbox and click 'Delete'.";
+
 			if ((student.getAuthLvl() != 1) || (student.getAuthLvl() != 2))
 			{
 				AddSection.Visible = false;
 				deleteBtn.Visible = false;
 				refresh.Visible = false;
+				AdminDirections.Visible = false;
 			}
 
 			foreach (GridViewRow row in scheduleGridview.Rows)

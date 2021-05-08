@@ -23,7 +23,7 @@ namespace TLDR_Capstone
 
 			student.allValidSchedules.Clear();
 
-			if (student.selectedCourses.Count() >= 2 && student.selectedCourses.Count() <= 4)
+			if (student.selectedCourses.Count() >= 2 && student.selectedCourses.Count() <= 6)
 			{
 				student.generateValidSchedules();
 			}
@@ -59,6 +59,9 @@ namespace TLDR_Capstone
 				schedulesGV.DataSource = dt;
 				schedulesGV.DataBind();
 			}
+
+			saveSchedules.Visible = true;
+
 			/*
 			schedules.Text = "";
 
@@ -78,6 +81,8 @@ namespace TLDR_Capstone
 		protected void saveSchedules_Click(object sender, EventArgs e)
 		{
 			Student student = Session["Student"] as Student;
+			if (student == null) student = new Student();
+
 			student.savedSchedules.Clear();
 
 			foreach (GridViewRow row in schedulesGV.Rows)
@@ -91,6 +96,8 @@ namespace TLDR_Capstone
 					}
 				}
 			}
+
+			saved.Visible = true;
 
 			Session["Student"] = student;
 

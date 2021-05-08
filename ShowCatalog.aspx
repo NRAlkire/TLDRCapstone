@@ -18,14 +18,22 @@
 		<div style="text-align: center">
 			<h1>Course Catalog</h1>
 		</div>
+		<div style="text-align:center">
+			<asp:Label ID="Directions" runat="server" Text="Please check any courses you are interested in taking.
+				Click the 'Select' button below this list to confirm your selection."></asp:Label>
+		</div>
+		<div style="text-align:center">
+			<asp:Label ID="AdminDirections" runat="server" Text=""></asp:Label>
+		</div>
+		<div style="text-align:center">
+			<h4><asp:Label ID="userandlvl" runat="server" Text="Label"></asp:Label></h4>
+		</div>
 		<div>
 			<asp:Button ID="AddCourse" runat="server" Text="Add Course" OnClientClick="return popAddWindow();" />
 			<asp:Button ID="deleteBtn" runat="server" OnClick="deleteBtn_Click" Text="Delete" />
 			<asp:Button ID="refresh" runat="server" OnClick="refresh_Click" Text="Refresh" />
 		</div>
-		<div>
-			<h4><asp:Label ID="userandlvl" runat="server" Text="Label"></asp:Label></h4>
-		</div>
+
 		<div style="text-align: center">
 			<asp:GridView ID="catalogGridview" runat="server" AutoGenerateColumns="False" width="100%" DataSourceID="SqlDataSource1">
 			<HeaderStyle CssClass="HeaderStyle" />
