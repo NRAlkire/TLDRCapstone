@@ -25,7 +25,7 @@
         </div>
     </div>
     <div class="footer">
-        <p>Student Schedule Planner: Ultimate Edition - Student Access</p>
+        <p>Student Schedule Planner: Ultimate Edition</p>
     </div>
 </body>
     </html>

@@ -4,23 +4,24 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>>
+	<link rel="stylesheet" href="css/main-stylesheet.css"/>
+    <title>Add Courses</title>>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" class="verify-box" runat="server">
         <div style="text-align: center">
-        	<asp:Label ID="deptID" runat="server" Text="Dept ID" Width="100px"></asp:Label>
-			<asp:TextBox ID="deptIDTB" runat="server"></asp:TextBox>
+        	<asp:Label ID="deptID" runat="server" Text="Dept ID" Width="200px" Font-Bold="True" Font-Names="Franklin Gothic Demi" Font-Size="Large"></asp:Label>
+			<asp:TextBox ID="deptIDTB" CssClass="input-field" runat="server" BackColor="SkyBlue">Enter Dept ID</asp:TextBox>
 			<br />
-			<asp:Label ID="courseNum" runat="server" Text="Course #" Width="100px"></asp:Label>
-			<asp:TextBox ID="courseNumTB" runat="server"></asp:TextBox>
+			<asp:Label ID="courseNum" runat="server" Text="Course #" Width="200px" Font-Bold="True" Font-Names="Franklin Gothic Demi" Font-Size="Large"></asp:Label>
+			<asp:TextBox ID="courseNumTB" CssClass="input-field" runat="server" BackColor="SkyBlue">Enter Course #</asp:TextBox>
 			<br />
-			<asp:Label ID="courseTitle" runat="server" Text="Course Title" Width="100px"></asp:Label>
-			<asp:TextBox ID="courseTitleTB" runat="server"></asp:TextBox
+			<asp:Label ID="courseTitle" runat="server" Text="Course Title" Width="200px" Font-Bold="True" Font-Names="Franklin Gothic Demi" Font-Size="Large"></asp:Label>
+			<asp:TextBox ID="courseTitleTB" CssClass="input-field" runat="server" BackColor="SkyBlue">Enter Course Title</asp:TextBox
 >
         </div>
 		<div style="text-align:center">
-			<asp:Button ID="Save" runat="server" Text="Add Course" width="75px" OnClick="Save_Click"/>
+			<asp:Button ID="Save" CssClass="submit-btn" runat="server" Text="Add Course" OnClick="Save_Click"/>
 		</div>
 	</form>
 </body>

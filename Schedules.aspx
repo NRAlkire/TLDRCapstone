@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <link rel="stylesheet" href="css/interior-stylesheet.css"/>
+    <title>Generated Schedules</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -12,7 +13,7 @@
             <h1>Available Schedules</h1>
         </div>
          <div style="text-align: center">
-			<asp:Button ID="Button1" runat="server" Text="Generate Schedules from Selected Courses" OnClick="GenerateSchedules_Click" />
+			<asp:Button ID="Button1"  Width="300px" CssClass="submit-btn" runat="server" Text="Generate Schedules from Selected Courses" OnClick="GenerateSchedules_Click" />
         </div>
         <div>
 			<asp:GridView ID="schedulesGV" runat="server" AutoGenerateColumns="False">

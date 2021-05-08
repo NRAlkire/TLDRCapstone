@@ -19,9 +19,9 @@
 			<h1>Course Catalog</h1>
 		</div>
 		<div>
-			<asp:Button ID="AddCourse" runat="server" Text="Add Course" OnClientClick="return popAddWindow();" />
-			<asp:Button ID="deleteBtn" runat="server" OnClick="deleteBtn_Click" Text="Delete" />
-			<asp:Button ID="refresh" runat="server" OnClick="refresh_Click" Text="Refresh" />
+			<asp:Button ID="AddCourse" CssClass="admin-btn" runat="server" Text="Add Course" OnClientClick="return popAddWindow();" />
+			<asp:Button ID="deleteBtn" CssClass="admin-btn" runat="server" OnClick="deleteBtn_Click" Text="Delete" />
+			<asp:Button ID="refresh" CssClass="admin-btn" runat="server" OnClick="refresh_Click" Text="Refresh" />
 		</div>
 		<div>
 			<h4><asp:Label ID="userandlvl" runat="server" Text="Label"></asp:Label></h4>
@@ -50,7 +50,7 @@
 		</div>
 		<div>
 			<h4>
-				<asp:Label ID="selected" runat="server" Text="Selected Courses"></asp:Label></h4><br />
+				<asp:Label ID="selected" runat="server" Text="Selected Courses" Width="200px" Font-Bold="True" Font-Names="Franklin Gothic Demi" Font-Size="Medium"></asp:Label></h4><br />
 		</div>
 	</form>
 </body>

@@ -16,12 +16,12 @@
 <body>
 	<form id="form1" runat="server">
 		<div style="text-align: center">
-			<h1>Course Catalog</h1>
+			<h1>Available Courses</h1>
 		</div>
 		<div>
-			<asp:Button ID="AddSection" runat="server" Text="Add Section" OnClientClick="return popAddWindow();" />
-			<asp:Button ID="deleteBtn" runat="server" OnClick="deleteBtn_Click" Text="Delete" />
-			<asp:Button ID="refresh" runat="server" OnClick="refresh_Click" Text="Refresh" />
+			<asp:Button ID="AddSection" CssClass="admin-btn" runat="server" Text="Add Section" OnClientClick="return popAddWindow();" />
+			<asp:Button ID="deleteBtn" CssClass="admin-btn" runat="server" OnClick="deleteBtn_Click" Text="Delete" />
+			<asp:Button ID="refresh" CssClass="admin-btn" runat="server" OnClick="refresh_Click" Text="Refresh" />
 		</div>
 
 		<div style="text-align: center">

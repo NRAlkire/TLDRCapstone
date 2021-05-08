@@ -28,7 +28,7 @@
 			<asp:Button ID="select" class="submit-btn" runat="server" Text="Select" OnClick="select_Click" />
         </div>
         <div>
-			<asp:Label ID="selectedcourses" runat="server" Text="Label"></asp:Label>
+			<asp:Label ID="selectedcourses" runat="server" Text="Label" Width="200px" Font-Bold="True" Font-Names="Franklin Gothic Demi" Font-Size="Medium"></asp:Label>
         </div>
     </form>
 </body>
