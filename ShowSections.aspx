@@ -18,6 +18,9 @@
 		<div style="text-align: center">
 			<h1>Available Courses</h1>
 		</div>
+		<div style="text-align:center">
+			<asp:Label ID="AdminDirections" runat="server" Text=""></asp:Label>
+		</div>
 		<div>
 			<asp:Button ID="AddSection" CssClass="admin-btn" runat="server" Text="Add Section" OnClientClick="return popAddWindow();" />
 			<asp:Button ID="deleteBtn" CssClass="admin-btn" runat="server" OnClick="deleteBtn_Click" Text="Delete" />

@@ -24,6 +24,33 @@ namespace TLDR_Capstone
 		protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
 		/// <summary>
+		/// Directions control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label Directions;
+
+		/// <summary>
+		/// AdminDirections control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label AdminDirections;
+
+		/// <summary>
+		/// userandlvl control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label userandlvl;
+
+		/// <summary>
 		/// AddCourse control.
 		/// </summary>
 		/// <remarks>
@@ -49,15 +76,6 @@ namespace TLDR_Capstone
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.Button refresh;
-
-		/// <summary>
-		/// userandlvl control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label userandlvl;
 
 		/// <summary>
 		/// catalogGridview control.

@@ -192,6 +192,75 @@ namespace TLDR_Capstone
                         }
                     }
                     break;
+                case 5:
+                    course0 = getSelectedCourse(0);
+                    course1 = getSelectedCourse(1);
+                    course2 = getSelectedCourse(2);
+                    course3 = getSelectedCourse(3);
+                    Course course4 = getSelectedCourse(4);
+                    for (int i = 0; i < course0.getSections().Count(); i++)
+                    {
+                        for (int j = 0; j < course1.getSections().Count(); j++)
+                        {
+                            for (int k = 0; k < course2.getSections().Count(); k++)
+                            {
+                                for (int l = 0; l < course3.getSections().Count(); l++)
+                                {
+                                    for (int m = 0; m < course4.getSections().Count(); m++)
+                                    {
+                                        beingEvaluated = new List<Section>();
+                                        beingEvaluated.Add(course0.sections[i]);
+                                        beingEvaluated.Add(course1.sections[j]);
+                                        beingEvaluated.Add(course2.sections[k]);
+                                        beingEvaluated.Add(course3.sections[l]);
+                                        beingEvaluated.Add(course4.sections[m]);
+                                        if (!hasOverlap(beingEvaluated))
+                                        {
+                                            allValidSchedules.Add(beingEvaluated);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 6:
+                    course0 = getSelectedCourse(0);
+                    course1 = getSelectedCourse(1);
+                    course2 = getSelectedCourse(2);
+                    course3 = getSelectedCourse(3);
+                    course4 = getSelectedCourse(4);
+                    Course course5 = getSelectedCourse(5);
+                    for (int i = 0; i < course0.getSections().Count(); i++)
+                    {
+                        for (int j = 0; j < course1.getSections().Count(); j++)
+                        {
+                            for (int k = 0; k < course2.getSections().Count(); k++)
+                            {
+                                for (int l = 0; l < course3.getSections().Count(); l++)
+                                {
+                                    for (int m = 0; m < course4.getSections().Count(); m++)
+                                    {
+                                        for (int n = 0; n < course5.getSections().Count(); n++)
+                                        {
+                                            beingEvaluated = new List<Section>();
+                                            beingEvaluated.Add(course0.sections[i]);
+                                            beingEvaluated.Add(course1.sections[j]);
+                                            beingEvaluated.Add(course2.sections[k]);
+                                            beingEvaluated.Add(course3.sections[l]);
+                                            beingEvaluated.Add(course4.sections[m]);
+                                            beingEvaluated.Add(course5.sections[n]);
+                                            if (!hasOverlap(beingEvaluated))
+                                            {
+                                                allValidSchedules.Add(beingEvaluated);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    break;
                 default:
            
                     break;

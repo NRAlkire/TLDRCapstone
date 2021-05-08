@@ -33,13 +33,18 @@ namespace TLDR_Capstone
 			else if (student.getAuthLvl() == 2) authlevel = "Root User";
 			else authlevel = "Unknown";
 
-			if (student != null) userandlvl.Text = student.getUsername() + ", " + authlevel;
+			if (student != null) userandlvl.Text = "User: " + student.getUsername() + "<br/> Status: " + authlevel;
 
+			AdminDirections.Text = "<b>Admin and Root Users:</b> Please use the 'Add Course' button to add courses to the catalog. <br/>" +
+				"Once you have clicked the button in the popup window, please click 'Refresh' to view your additions. <br/>" +
+				"To delete a course, simply check the checkbox and click 'Delete'.";
+			
 			if ((student.getAuthLvl() != 1) || (student.getAuthLvl() != 2))
 			{
 				AddCourse.Visible = false;
 				deleteBtn.Visible = false;
 				refresh.Visible = false;
+				AdminDirections.Visible = false;
 			}
 
 		}
@@ -92,7 +97,7 @@ namespace TLDR_Capstone
 				myCourse = new Course(dataTable.Rows[0][1].ToString(), 
 					int.Parse(dataTable.Rows[0][2].ToString()),
 					dataTable.Rows[0][3].ToString(), null); 
-
+				
 				//da now has all sections
 				foreach (DataRow dataRow in dataTable.Rows)
 				{
@@ -111,7 +116,7 @@ namespace TLDR_Capstone
 
 			//test to see if it worked
 
-			selected.Text = "";
+			selected.Text = "<b>Selected Courses:</b> <br/>";
 
 			for (int i = 0; i < student.potentialCourses.Count(); i++)
 			{
