@@ -12,6 +12,12 @@
         <div style="text-align: center">
             <h1>Available Courses</h1>
         </div>
+        <div style="text-align:center">
+			<asp:Label ID="Directions" runat="server" Text="Directions"></asp:Label>
+        </div>
+        <div style="text-align:center">
+			<asp:Label ID="userandlvl" runat="server" Text="User"></asp:Label>
+        </div>
         <div>
 			<asp:GridView ID="availableCoursesGV" runat="server" AutoGenerateColumns="False">
                 <Columns>
