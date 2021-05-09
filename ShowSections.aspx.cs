@@ -28,12 +28,19 @@ namespace TLDR_Capstone
 				"Once you have clicked the button in the popup window, please click 'Refresh' to view your additions. <br/>" +
 				"To delete a section, simply check the checkbox and click 'Delete'.";
 
-			if ((student.getAuthLvl() != 1) || (student.getAuthLvl() != 2))
+			if (student.getAuthLvl() == 0)
 			{
 				AddSection.Visible = false;
 				deleteBtn.Visible = false;
 				refresh.Visible = false;
 				AdminDirections.Visible = false;
+			}
+			else if ((student.getAuthLvl() == 1) || (student.getAuthLvl() == 2))
+			{
+				AddSection.Visible = true;
+				deleteBtn.Visible = true;
+				refresh.Visible = true;
+				AdminDirections.Visible = true;
 			}
 
 			foreach (GridViewRow row in scheduleGridview.Rows)
