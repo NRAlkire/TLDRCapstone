@@ -15,8 +15,23 @@ namespace TLDR_Capstone
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
+			///change the values of the Registration requested from int
+			///to Root or Admin
+			foreach (GridViewRow row in registrationGridView.Rows)
+			{
+				if (row.RowType == DataControlRowType.DataRow)
+				{
+					if (row.Cells[3].Text.Equals("1"))
+                    {
+						row.Cells[3].Text = "Administrator";
+                    }
+					else if (row.Cells[3].Text.Equals("2"))
+                    {
+						row.Cells[3].Text = "Root";
+                    }
+				}
+			}
+		}
 
         protected void regisQueueBtn_Click(object sender, EventArgs e)
         {
@@ -66,6 +81,7 @@ namespace TLDR_Capstone
 				string to = (string) command.ExecuteScalar(); //To address  
 				conn.Close();
 
+				//send the user an email telling them they can log in
 				string from = "scheduleplannerdonotreply@gmail.com"; //From address   
 				MailMessage message = new MailMessage(from, to);
 				String mailbody = "Your account has now been verified. You may now login to the Schedule Planner.";

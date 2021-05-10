@@ -17,6 +17,8 @@ namespace TLDR_Capstone
 			Student student = Session["Student"] as Student;
 			if (student == null) student = new Student();
 
+			//if student is not a root
+			//make the Registration Queue button invisible
 			if (student.getAuthLvl() != 2)
             {
 				registrationQueue.Visible = false;

@@ -54,7 +54,7 @@ namespace TLDR_Capstone
 				conn.Open();
 				command.ExecuteNonQuery();
 				
-				//set the authorized value to true
+				//set the authorized value to true if not already set
 				if (userAuthLevel == 0)
                 {
 					conn.Close();
@@ -73,14 +73,17 @@ namespace TLDR_Capstone
 				MailMessage message = new MailMessage(from, to);
 
 				string mailbody;
+				//student
 				if (userAuthLevel == 0) {
 					mailbody = "Your email has now been verified. You may now login to the Schedule Planner.";
 				}
+				//root or admin
 				else {
 					mailbody = "Your email has now been verified. A root user must review your request for credentials " +
 						"before you are able to login.";
 				}
 
+				//send email with message set above
 				message.Subject = "Registration Verification";
 				message.Body = mailbody;
 				message.BodyEncoding = Encoding.UTF8;
@@ -107,6 +110,7 @@ namespace TLDR_Capstone
 			}
 			conn.Close();
 
+			//return to the login page
 			Response.Redirect("~/Default");
 
 			return;
