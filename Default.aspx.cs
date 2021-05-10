@@ -17,9 +17,15 @@ namespace TLDR_Capstone
 		protected void Login_Authenticate(object sender, AuthenticateEventArgs e)
 		{
             string constr = ConfigurationManager.ConnectionStrings["capstoneDatabase"].ConnectionString;
-			
+
 			SqlConnection conn = new SqlConnection(constr);
-			SqlCommand command = new SqlCommand("select password from Users where username = '" + Login.UserName + "'");
+			SqlCommand command = new SqlCommand("SELECT authorized FROM Users where username = '" + Login.UserName + "'", conn);
+
+			conn.Open();
+			int authorized = command.ExecuteScalar();
+			conn.Close();
+			
+			command = new SqlCommand("select password from Users where username = '" + Login.UserName + "'");
 			
 			command.Connection = conn;
 
@@ -29,7 +35,7 @@ namespace TLDR_Capstone
 
 			if (value == null) Login.FailureText = "User not found";
 
-			else if (value.Trim().Equals(Login.Password))
+			else if (value.Trim().Equals(Login.Password) && authorized == 1)
 			{
 				e.Authenticated = true;
 				Student student = new Student();
@@ -47,6 +53,11 @@ namespace TLDR_Capstone
 				Response.Redirect("~/Dashboard");
 
 			}
+
+			else
+            {
+				Login.FailureText = "User not authorized";
+            }
 
 		}
 
