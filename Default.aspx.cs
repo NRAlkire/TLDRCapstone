@@ -20,9 +20,9 @@ namespace TLDR_Capstone
 
 			SqlConnection conn = new SqlConnection(constr);
 			SqlCommand command = new SqlCommand("SELECT authorized FROM Users where username = '" + Login.UserName + "'", conn);
-
+			
 			conn.Open();
-			int authorized = command.ExecuteScalar();
+			int authorized = (int)command.ExecuteScalar();
 			conn.Close();
 			
 			command = new SqlCommand("select password from Users where username = '" + Login.UserName + "'");
