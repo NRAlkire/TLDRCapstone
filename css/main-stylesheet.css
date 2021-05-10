@@ -63,7 +63,7 @@ h2 {
 
 .form-box {
 	width: 250px;
-	height: 50%;
+	height: fit-content();
 	position: relative;
 	margin: 6% auto;
 	background-color: #F2EAE4;
@@ -159,8 +159,9 @@ h2 {
 }
 
 .menu-btn {
-	width: 100%;
+	width: 175px;
 	padding: 5px 20px;
+	font-size: xx-small;
 	cursor: pointer;
 	display: block;
 	color: white;
