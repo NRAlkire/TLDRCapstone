@@ -60,6 +60,8 @@ namespace TLDR_Capstone
 				schedulesGV.DataBind();
 			}
 
+			numSchedules.Text = "Number of generated schedules: " + student.allValidSchedules.Count();
+
 			saveSchedules.Visible = true;
 
 			/*
