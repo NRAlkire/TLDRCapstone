@@ -54,6 +54,7 @@ namespace TLDR_Capstone
 				conn.Open();
 				command.ExecuteNonQuery();
 				
+				//set the authorized value to true
 				if (userAuthLevel == 0)
                 {
 					conn.Close();

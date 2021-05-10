@@ -28,6 +28,7 @@ namespace TLDR_Capstone
 			student.reservedTimes.Clear();
 			selected.Text = "";
 
+			//get the times from the table
 			foreach (GridViewRow row in reservedTimeView.Rows)
 			{
 				if (row.RowType == DataControlRowType.DataRow)
@@ -43,6 +44,7 @@ namespace TLDR_Capstone
 			string constr = ConfigurationManager.ConnectionStrings["capstoneDatabase"].ConnectionString;
 			SqlConnection conn = new SqlConnection(constr);
 
+			//Empty the table in SQL at the username
 			SqlCommand command = new SqlCommand("DELETE FROM Reserved WHERE username = @username", conn);
 			command.Parameters.AddWithValue("@username", student.getUsername());
 
@@ -51,6 +53,7 @@ namespace TLDR_Capstone
 			conn.Close();
 
 
+			//add the values into table that user selected
 			foreach (ReservedTime reserved in reservedTimes)
 			{
 				command = new SqlCommand("INSERT INTO Reserved (username, reservedDay, reservedStartTime, reservedEndTime) " +

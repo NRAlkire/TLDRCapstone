@@ -31,10 +31,12 @@ namespace TLDR_Capstone
 				SqlCommand command = new SqlCommand("select username from Users where " +
 					"exists (select username from Users where username = '" + userTB.Text + "')");
 				command.Connection = conn;
+
 				conn.Open();
 				if (command.ExecuteScalar() == null)
 				{
 					conn.Close();
+					//create the user in database
 					command = new SqlCommand("INSERT INTO Users (username, password, authlevel, email, verified, authorized) " +
 						"VALUES(@username, @password, @authlevel, @email, @verified, @authorized)", conn);
 
@@ -52,22 +54,13 @@ namespace TLDR_Capstone
 					debug.Text = "User successfully added.";
 					conn.Close();
 
-					/*command = new SqlCommand("INSERT INTO Registration (registrationColumnID, verified) " 
-						+ "VALUES(@registrationColumnID, @verified)", conn);
-
-					command.Parameters.AddWithValue("@registrationColumnID", userTB.Text);
-					command.Parameters.AddWithValue("@verified", false);
-
-					conn.Open();
-					command.ExecuteNonQuery();*/
-
 					//sending the email
 					string to = emailTB.Text; //To address    
 					string from = "scheduleplannerdonotreply@gmail.com"; //From address   
 					MailMessage message = new MailMessage(from, to);
 
 					//Body of message
-					String mailbody = "Please enter your email at /*insert link*/ to verify your account.";
+					String mailbody = "Please enter your email at https://tldrcapstonestudentplanner.azurewebsites.net/Verify to verify your account.";
 
 					//Subject of message
 					message.Subject = "Registration Verification";
