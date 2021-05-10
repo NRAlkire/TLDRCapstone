@@ -13,6 +13,14 @@ namespace TLDR_Capstone
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			//Grab Student from Session
+			Student student = Session["Student"] as Student;
+			if (student == null) student = new Student();
+
+			if (student.getAuthLvl() != 2)
+            {
+				registrationQueue.Visible = false;
+            }
 
 		}
 
