@@ -37,7 +37,7 @@
 		</asp:SqlDataSource>
 
 		<div>
-			<asp:Button class="submit-btn" ID="regisQueueBtn" runat="server" Text="Select" OnClick="regisQueueBtn_Click" /><br />
+			<asp:Button class="submit-btn" ID="regisQueueBtn" runat="server" Font-Size="Medium" Text="Confirm Registration" OnClick="regisQueueBtn_Click" /><br />
 		</div>
 		<div>
 			<h4>
