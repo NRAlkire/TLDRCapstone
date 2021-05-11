@@ -12,6 +12,10 @@
 		<div style="text-align: center">
 			<h1>Reserved Times</h1>
 		</div>
+		<div style="text-align:center">
+			<asp:Label ID="Directions" runat="server" Text="Please check any times that you are not available to take classes.
+				Click the 'Select' button below this list to confirm your selection."></asp:Label>
+		</div>
 		<div>
 			<h4>
 				<asp:Label ID="userandlvl" runat="server" Text="Label"></asp:Label></h4>
