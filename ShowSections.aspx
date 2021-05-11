@@ -51,7 +51,7 @@
 				</Columns>
 			</asp:GridView>
 		</div>
-		<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:capstoneDatabaseConnectionString %>" SelectCommand="SELECT [deptID], [courseNumber], [courseTitle], [sectionID], [instructor], [days], [startTime], [endTime] FROM [Schedule]"></asp:SqlDataSource>
+		<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:capstoneDatabaseConnectionString %>" SelectCommand="SELECT [deptID], [courseNumber], [courseTitle], [sectionID], [instructor], [days], [startTime], [endTime] FROM [Schedule] ORDER BY [deptID], [courseNumber]"></asp:SqlDataSource>
 	</form>
 </body>
 </html>
