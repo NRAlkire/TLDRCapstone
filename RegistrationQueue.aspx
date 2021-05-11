@@ -41,7 +41,7 @@
 		</div>
 		<div>
 			<h4>
-				<asp:Label ID="selected" runat="server" Text="Verified Users"></asp:Label></h4><br />
+				<asp:Label ID="selected" runat="server" Text="Verified Users: "></asp:Label></h4><br />
 		</div>
 	</form>
 </body>

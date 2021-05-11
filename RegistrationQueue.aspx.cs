@@ -111,7 +111,7 @@ namespace TLDR_Capstone
 			//test to see if it worked
 			foreach (String username in registrationQueue)
 			{
-				selected.Text += username + " added" + "<br/>";
+				selected.Text += username + " authorized" + "<br/>";
 			}
 
 			Session["Student"] = student;
