@@ -3,13 +3,18 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<header runat="server">
     <title>Reserved Times</title>
-</head>
+	<link rel="stylesheet" href="css/interior-stylesheet.css"/>
+</header>
 <body>
     <form id="reserveform" runat="server">
 		<div style="text-align: center">
-			<h2>Reserved Times</h2>
+			<h1>Reserved Times</h1>
+		</div>
+		<div style="text-align:center">
+			<asp:Label ID="Directions" runat="server" Text="Please check any times that you are not available to take classes.
+				Click the 'Select' button below this list to confirm your selection."></asp:Label>
 		</div>
 		<div>
 			<h4>
@@ -39,7 +44,7 @@
 		</div>
 		<div>
 			<h4>
-				<asp:Label ID="selected" runat="server" Text="Selected Courses"></asp:Label></h4><br />
+				<asp:Label ID="selected" runat="server" Text="Selected Courses: "></asp:Label></h4><br />
 		</div>
 	</form>
 </body>

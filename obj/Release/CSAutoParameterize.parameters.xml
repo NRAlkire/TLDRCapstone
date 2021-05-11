@@ -6,4 +6,7 @@
   <parameter name="capstoneDatabase-Web.config Connection String" description="capstoneDatabase Connection String used in web.config by the application to access the database." defaultValue="Data Source=capstonedatabase.database.windows.net;Initial Catalog=capstoneDatabase;User ID=master-root;Password=tldr!Password;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="D:\\Capstone\ Project\\New\ folder\\TLDR-Capstone\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='capstoneDatabase']/@connectionString" />
   </parameter>
+  <parameter name="capstoneDatabaseConnectionString-Web.config Connection String" description="capstoneDatabaseConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=capstonedatabase.database.windows.net;Initial Catalog=capstoneDatabase;User ID=master-root;Password=tldr!Password;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Capstone\ Project\\New\ folder\\TLDR-Capstone\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='capstoneDatabaseConnectionString']/@connectionString" />
+  </parameter>
 </parameters>

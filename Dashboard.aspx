@@ -11,11 +11,11 @@
         </div>
     <div class="button-box">
 	<ul>
+        <li><button class="menu-btn"><a href ="ReservedTimes.aspx" target="window">Reserved Times</button></a></li>
 		<li><button class="menu-btn"><a href ="ShowCatalog.aspx" target="window">Course Catalog</button></a></li>
 		<li><button class="menu-btn"><a href ="AvailableCourses.aspx" target="window">Available Courses</button></a></li>
 		<li><button class="menu-btn"><a href ="ShowSections.aspx" target="window">All Sections</button></a></li>
 		<li><button class="menu-btn"><a href ="Schedules.aspx" target="window">My Schedules</button></a></li>
-		<li><button class="menu-btn"><a href ="ReservedTimes.aspx" target="window">Reserved Times</button></a></li>
 		<li><button ID="registrationQueue" runat="server" class="menu-btn"><a href ="RegistrationQueue.aspx" target="window">Registration Queues</button></a></li>
 		</ul>
     </div>
