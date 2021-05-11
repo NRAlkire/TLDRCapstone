@@ -54,6 +54,15 @@ namespace TLDR_Capstone
 				AdminDirections.Visible = true;
 			}
 
+			if (student.potentialCourses != null)
+			{
+				selected.Text = "<b>Selected Courses:</b> <br/>";
+
+				for (int i = 0; i < student.potentialCourses.Count(); i++)
+				{
+					selected.Text += student.potentialCourses[i].getName() + "<br/>";
+				}
+			}
 		}
 
 		protected void selectBtn_Click(object sender, EventArgs e)

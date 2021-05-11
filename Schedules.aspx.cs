@@ -112,7 +112,7 @@ namespace TLDR_Capstone
 
 			if (student.savedSchedules.Count != 0)
 			{
-				foreach (var schedule in student.allValidSchedules)
+				foreach (var schedule in student.savedSchedules)
 				{
 					Label schedules = new Label();
 					schedules.Text = "";

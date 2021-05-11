@@ -13,11 +13,12 @@ namespace TLDR_Capstone
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			Student student = Session["Student"] as Student;
+			if (student == null) student = new Student();
 
 			if (!Page.IsPostBack)
 			{
-				Student student = Session["Student"] as Student;
-				if (student == null) student = new Student();
+
 
 				string authlevel = null;
 
@@ -52,6 +53,16 @@ namespace TLDR_Capstone
 			Directions.Text = "Please check at least two and up to six courses. <br/>" +
 				"These courses will be used to generate possible schedules. <br/>" +
 				"Click the 'Select' button below this list to confirm your selection.";
+
+			if (student.selectedCourses != null)
+			{
+				selectedcourses.Text = "<b>Selected Courses:</b> <br/>";
+
+				foreach (var course in student.selectedCourses)
+				{
+					selectedcourses.Text += course.getName() + "<br/>";
+				}
+			}
 		}
 
 		protected void select_Click(object sender, EventArgs e)
