@@ -26,7 +26,9 @@
 			<asp:Button ID="deleteBtn" CssClass="admin-btn" runat="server" OnClick="deleteBtn_Click" Text="Delete" />
 			<asp:Button ID="refresh" CssClass="admin-btn" runat="server" OnClick="refresh_Click" Text="Refresh" />
 		</div>
-
+				<div style="text-align:center">
+			<asp:Label ID="Directions" runat="server" Text="To select courses to add to your schedule, please use the Course Catalog Page"></asp:Label>
+		</div>
 		<div style="text-align: center">
 			<asp:GridView ID="scheduleGridview" runat="server" AutoGenerateColumns="False" width="100%" DataSourceID="SqlDataSource1">
 			<HeaderStyle CssClass="HeaderStyle" />

@@ -14,6 +14,7 @@
         </div>
          <div style="text-align: center">
 			<asp:Button ID="Button1"  Width="300px" CssClass="submit-btn" runat="server" Text="Generate Schedules from Selected Courses" OnClick="GenerateSchedules_Click" />
+              <asp:Label ID="numSchedules" runat="server" HeaderText="Number of Available Schedule(s)"></asp:Label>
         </div>
         <div>
 			<asp:GridView ID="schedulesGV" runat="server" AutoGenerateColumns="False">
