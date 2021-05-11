@@ -29,7 +29,7 @@
 			<h4><asp:Label ID="userandlvl" runat="server" Text="Label"></asp:Label></h4>
 		</div>
 		<div>
-			<asp:Button ID="AddCourse" CssClass="admin-btn" runat="server" Text="Add Course" OnClientClick="return popAddWindow();" />
+			<asp:Button ID="AddCourse" CssClass="admin-btn" runat="server" Text="Add Course" OnClientClick="return popAddWindow();"/>
 			<asp:Button ID="deleteBtn" CssClass="admin-btn" runat="server" OnClick="deleteBtn_Click" Text="Delete" />
 			<asp:Button ID="refresh" CssClass="admin-btn" runat="server" OnClick="refresh_Click" Text="Refresh" />
 		</div>
