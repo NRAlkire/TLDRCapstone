@@ -13,8 +13,16 @@ namespace TLDR_Capstone
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+			Student student = Session["Student"] as Student;
 
-        }
+			if (student == null) student = new Student();
+
+			foreach (ReservedTime reserved in student.getReservedTimes())
+			{
+				selected.Text += reserved.getDay() + " " + reserved.getBeginTime().ToString() +
+					"-" + reserved.getEndTime().ToString() + "<br/>";
+			}
+		}
 
 		protected void selectBtn_Click(object sender, EventArgs e)
 		{
@@ -73,7 +81,7 @@ namespace TLDR_Capstone
 			}
 
 			//test to see if it worked
-			foreach (ReservedTime reserved in student.reservedTimes)
+			foreach (ReservedTime reserved in student.getReservedTimes())
             {
 				selected.Text += reserved.getDay() + " " + reserved.getBeginTime().ToString() + 
 					"-" + reserved.getEndTime().ToString() +  "<br/>";
