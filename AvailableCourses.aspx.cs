@@ -80,7 +80,7 @@ namespace TLDR_Capstone
 
 			foreach (var course in student.selectedCourses)
 			{
-				selectedcourses.Text += /*"title " + */course.getName() + "<br/>";
+				selectedcourses.Text += course.getName() + "<br/>";
 			}
 		}
 	}

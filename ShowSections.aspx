@@ -16,7 +16,7 @@
 <body>
 	<form id="form1" runat="server">
 		<div style="text-align: center">
-			<h1>Available Courses</h1>
+			<h1>All Available Sections</h1>
 		</div>
 		<div style="text-align:center">
 			<asp:Label ID="AdminDirections" runat="server" Text=""></asp:Label>

@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div style="text-align: center">
-            <h1>Available Schedules</h1>
+            <h1>Generated and Saved Schedules</h1>
         </div>
          <div style="text-align: center">
 			<asp:Button ID="Button1"  Width="300px" CssClass="submit-btn" runat="server" Text="Generate Schedules from Selected Courses" OnClick="GenerateSchedules_Click" />
