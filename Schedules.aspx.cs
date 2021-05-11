@@ -13,7 +13,36 @@ namespace TLDR_Capstone
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			Student student = Session["Student"] as Student;
+			if (student == null) student = new Student();
 
+			DataTable dt = new DataTable();
+			DataColumn dc = new DataColumn("Schedule");
+			dt.Columns.Add(dc);
+
+			if (student.savedSchedules.Count != 0)
+			{
+				foreach (var schedule in student.savedSchedules)
+				{
+					Label schedules = new Label();
+					schedules.Text = "";
+					DataRow dr = dt.NewRow();
+
+					foreach (var section in schedule)
+					{
+						schedules.Text += section.getCourseTitle() + ": "
+							+ section.getMeetDays() +
+							" Begin:" + section.getBeginTime() +
+							", End:" + section.getEndTime() + "\n";
+					}
+
+					dr["Schedule"] = schedules.Text;
+					dt.Rows.Add(dr);
+				}
+
+				savedSchedulesGV.DataSource = dt;
+				savedSchedulesGV.DataBind();
+			}
 		}
 
 		protected void GenerateSchedules_Click(object sender, EventArgs e)
@@ -98,8 +127,6 @@ namespace TLDR_Capstone
 					}
 				}
 			}
-
-			saved.Visible = true;
 
 			Session["Student"] = student;
 

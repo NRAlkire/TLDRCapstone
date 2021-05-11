@@ -37,7 +37,7 @@
         </div>
         <div style="text-align:center">
             <h2>
-				<asp:Label ID="saved" runat="server" Text="Saved Schedules" Visible="False"></asp:Label></h2>
+				<asp:Label ID="saved" runat="server" Text="Saved Schedules"></asp:Label></h2>
         </div>
          <div>
 			<asp:GridView ID="savedSchedulesGV" runat="server" AutoGenerateColumns="False">
