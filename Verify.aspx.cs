@@ -38,17 +38,9 @@ namespace TLDR_Capstone
 				int userAuthLevel = (int) command.ExecuteScalar();
 				conn.Close();
 
-				//Get the username to use as key for registration table
-				command = new SqlCommand("SELECT username FROM Users WHERE email = @inputEmail", conn);
-				command.Parameters.AddWithValue("@inputEmail", inputEmail);
-
-				conn.Open();
-				String userName = (String) command.ExecuteScalar();
-				conn.Close();
-
 				//update verified value to true
-				command = new SqlCommand("UPDATE Users SET verified = @Verified WHERE username = @username", conn);
-				command.Parameters.AddWithValue("@username", userName);
+				command = new SqlCommand("UPDATE Users SET verified = @Verified WHERE email = @inputEmail", conn);
+				command.Parameters.AddWithValue("@inputEmail", inputEmail);
 				command.Parameters.AddWithValue("@Verified", 1);
 
 				conn.Open();
@@ -59,8 +51,8 @@ namespace TLDR_Capstone
                 {
 					conn.Close();
 
-					command = new SqlCommand("UPDATE Users SET authorized = @authorized WHERE username = userName", conn);
-					command.Parameters.AddWithValue("@username", userName);
+					command = new SqlCommand("UPDATE Users SET authorized = @authorized WHERE email = @inputEmail", conn);
+					command.Parameters.AddWithValue("@inputEmail", inputEmail);
 					command.Parameters.AddWithValue("@authorized", 1);
 
 					conn.Open();
